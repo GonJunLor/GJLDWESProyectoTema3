@@ -17,10 +17,26 @@
        <?php 
        /**
         * @author: Gonzalo Junquera Lorenzo
-        * @since: 06/10/2025
+        * @since: 16/10/2025
         * 12.Mostrar el contenido de las variables superglobales (utilizando print_r() y foreach()).
         */
         
+        echo '<h3>Usando foreach y echo para la variable $_GLOBAL</h3>';
+        foreach ($GLOBALS as $clave => $valor) {
+            echo $clave." = ".$valor."<br>";
+        }
+        echo '<h3>Usando print_r para la variable $_GLOBAL</h3>';
+        print_r($GLOBALS);
+        
+        echo '<h3>Usando var_dump para la variable $_SERVER</h3>';
+        var_dump($_SERVER);
+        
+        echo '<h3>Usando foreach y echo para la variable $_SERVER</h3>';
+        foreach ($_SERVER as $clave => $valor) {
+            echo $clave." = ".$valor."<br>";
+        }
+        
+
        ?>
     </main>
 </body>

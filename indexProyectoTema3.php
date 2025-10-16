@@ -103,14 +103,14 @@
             <tr>
                 <td>12</td>
                 <td>Mostrar el contenido de las variables superglobales (utilizando print_r() y foreach()).</td>
-                <td><a href="codigoPHP/ejercicio12.php"></a></td>
-                <td><a href="mostrarcodigo/muestraejercicio12.php"></a></td>
+                <td><a href="codigoPHP/ejercicio12.php"><img src="webroot/media/images/play.png" alt="boton_play"></a></td>
+                <td><a href="mostrarcodigo/muestraejercicio12.php"><img src="webroot/media/images/code.webp" alt="boton_code"></a></td>
             </tr>
             <tr>
                 <td>13</td>
                 <td>Crear una función que cuente el número de visitas a la página actual desde una fecha concreta.</td>
-                <td><a href="codigoPHP/ejercicio13.php"></a></td>
-                <td><a href="mostrarcodigo/muestraejercicio13.php"></a></td>
+                <td><a href="codigoPHP/ejercicio13.php"><img src="webroot/media/images/play.png" alt="boton_play"></a></td>
+                <td><a href="mostrarcodigo/muestraejercicio13.php"><img src="webroot/media/images/code.webp" alt="boton_code"></a></td>
             </tr>
             <tr>
                 <td>14</td>

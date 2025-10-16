@@ -17,10 +17,10 @@
        <?php 
        /**
         * @author: Gonzalo Junquera Lorenzo
-        * @since: 15/10/2025
+        * @since: 16/10/2025
         * 10.Mostrar el contenido del fichero que se está ejecutando.
         */
-        $nombreFichero = __FILE__;
+        $nombreFichero = $_SERVER["SCRIPT_FILENAME"];
         echo "<h3>Contenido del Fichero: {$nombreFichero}</h3>";
         echo highlight_file($nombreFichero);
        ?>
