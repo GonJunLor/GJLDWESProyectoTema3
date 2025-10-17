@@ -17,10 +17,35 @@
        <?php 
        /**
         * @author: Gonzalo Junquera Lorenzo
-        * @since: 06/10/2025
+        * @since: 17/10/2025
         * 16.Recorrer el array anterior utilizando funciones para obtener el mismo resultado.
         */
+        $sueldoTotal=0;
+        $aSueldoSemana=[
+            "Lunes"=>50,
+            "Martes"=>30,
+            "Miercoles"=>45,
+            "Jueves"=>28,
+            "Viernes"=>100,
+            "Sabado"=>10,
+            "Domingo"=>0
+        ];
         
+        function sumarSueldoSemana($aSueldo) {
+            $SueldoTotal = 0;
+
+            // Mostramos el sueldo de cada día
+            foreach ($aSueldo as $dia => $sueldo) {
+                echo "El $dia has recibido un sueldo de $sueldo €<br>";
+                
+                $SueldoTotal += $sueldo;
+            }
+
+            return $SueldoTotal;
+        }
+
+        // Mostramos el sueldo total llamando a la funcion y pasandole el array con los sueldos diarios
+        echo "<br><strong>El sueldo total de esta semana es: ". sumarSueldoSemana($aSueldoSemana)."€</strong>";
        ?>
     </main>
 </body>

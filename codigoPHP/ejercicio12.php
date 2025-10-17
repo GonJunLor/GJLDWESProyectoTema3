@@ -22,9 +22,17 @@
         */
         
         echo '<h3>Usando foreach y echo para la variable $_GLOBAL</h3>';
+        echo "<table>";
         foreach ($GLOBALS as $clave => $valor) {
-            echo $clave." = ".$valor."<br>";
+            foreach ($valor as $c => $v) {
+                echo "<tr>";
+                echo "<td>$".$clave."</td>";
+                echo "<td>".$c."</td>";
+                echo "<td>".$v."</td>";
+                echo "</tr>";
+            }  
         }
+        echo "</table>";
         echo '<h3>Usando print_r para la variable $_GLOBAL</h3>';
         print_r($GLOBALS);
         

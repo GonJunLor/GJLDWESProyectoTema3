@@ -20,7 +20,29 @@
         * @since: 06/10/2025
         * 15.Crear e inicializar un array con el sueldo percibido de lunes a domingo. Recorrer el array para calcular el sueldo percibido durante la semana. (Array asociativo con los nombres de los días de la semana).
         */
+         echo("<h1>Sueldo semanal</h1>");
         
+        $sueldoTotal=0;
+        $aSueldoSemana=[
+            "Lunes"=>50,
+            "Martes"=>30,
+            "Miercoles"=>45,
+            "Jueves"=>28,
+            "Viernes"=>100,
+            "Sabado"=>10,
+            "Domingo"=>0
+        ];
+ 
+        echo("<h2>Sueldo diario:</h2>");
+        
+        foreach ($aSueldoSemana as $dia => $sueldoDiario) {
+            $sueldoTotal += $sueldoDiario;
+            print("El ". $dia . " has cobrado ". $sueldoDiario . "€</br>");
+        }
+        
+        echo("<h2>Sueldo semanal:</h2>");
+        
+        echo("<b>Total: ". $sueldoTotal ."€</b>");
        ?>
     </main>
 </body>
