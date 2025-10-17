@@ -157,8 +157,8 @@
             <tr>
                 <td>21</td>
                 <td>Construir un formulario para recoger un cuestionario realizado a una persona y enviarlo a una página Tratamiento.php para que muestre las preguntas y las respuestas recogidas.</td>
-                <td><a href="codigoPHP/ejercicio21.php"></a></td>
-                <td><a href="mostrarcodigo/muestraejercicio21.php"></a></td>
+                <td><a href="codigoPHP/ejercicio21.php"><img src="webroot/media/images/play.png" alt="boton_play"></a></td>
+                <td><a href="mostrarcodigo/muestraejercicio21.php"><img src="webroot/media/images/code.webp" alt="boton_code"></a></td>
             </tr>
             <tr>
                 <td>22</td>

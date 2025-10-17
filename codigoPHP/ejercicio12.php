@@ -12,6 +12,20 @@
         <div><a href="../indexProyectoTema3.php">Volver</a></div>
         <h2> <a href="../indexProyectoTema3.php">Tema 3</a> - Ejercicio 12</h2>
         <h2>Gonzalo Junquera Lorenzo</h2>
+        <style>
+            table{
+                border-collapse: collapse;
+            }
+            th{
+                background-color: gainsboro;
+                border: 1px solid black;
+                padding: 3px;
+            }
+            td{
+                border: 1px solid black;
+                padding: 3px;
+            }
+        </style>
     </nav>
     <main>
        <?php 
@@ -26,8 +40,8 @@
         foreach ($GLOBALS as $clave => $valor) {
             foreach ($valor as $c => $v) {
                 echo "<tr>";
-                echo "<td>$".$clave."</td>";
-                echo "<td>".$c."</td>";
+                echo "<th>$".$clave."</th>";
+                echo "<th>".$c."</th>";
                 echo "<td>".$v."</td>";
                 echo "</tr>";
             }  

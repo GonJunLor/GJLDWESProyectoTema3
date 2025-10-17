@@ -15,7 +15,10 @@
     </nav>
     <main>
        <?php 
-        highlight_file("../codigoPHP/ejercicio21.php")
+       echo "<h2>Página de formulario</h2>";
+       highlight_file("../codigoPHP/ejercicio21.php");
+       echo "<h2>Página de tratamiento</h2>";
+       highlight_file("../codigoPHP/tratamiento.php");
        ?>
     </main>
 </body>

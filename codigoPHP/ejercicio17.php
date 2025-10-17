@@ -56,23 +56,23 @@
         
         $fila = 0;
         $numAsiento = 0;
-        foreach ($aTeatro as $aFila) {
-            print("<tr>");
-            //printf("<td>Pasillo %d</td>", $aFila);
+        foreach ($aTeatro as $numFila=>$aFila) {
+            echo "<tr>";
             $fila++;
-            echo "<th>Pasillo ".$fila."</th>";
-            foreach ($aFila as $asiento) {
-                $numAsiento++;
+            //echo "<th>Pasillo ".$fila."</th>";
+            echo "<th>Pasillo ".$numFila."</th>";
+            foreach ($aFila as $numAsiento=>$asiento) {
+                //$numAsiento++;
                 if(is_string($asiento)){
-                    print('<td class="ocupado">'.$asiento.'</td>');
+                    echo '<td class="ocupado">'.$asiento.'</td>';
                 } else {
-                    print('<td>'.$fila.'-'.$numAsiento.'</td>');
+                    echo '<td>'.$fila.'-'.$numAsiento.'</td>';
                 }
             }
             $numAsiento = 0;
-            print("</tr>");
+            echo "</tr>";
         }
-        print("</table>");
+        echo "</table>";
         
        ?>
     </main>
