@@ -42,7 +42,7 @@
 nav{
     background-color: var(--colorFondo1);
     border-bottom: var(--colorBorde) solid var(--anchoBorde);
-    padding: 15px 18px;
+    padding: 5px 18px;
     position: sticky;
     top: 0;
     z-index: 2000;
@@ -98,10 +98,10 @@ section>div{
 
 /* Tabla */
 table{
-    width: 70vw;
+    width: 65vw;
     /* min-width: 80vw; */
     margin: auto;
-    margin-top: 20px;
+    margin-top: 5px;
     margin-bottom: 20px;
     /* background-color: var(--colorFondo2); */
 }
@@ -114,14 +114,14 @@ tr:nth-child(even) td{
     border: 1px solid var(--colorFondo2);
 }
 td{
-    padding: 5px 10px;
+    padding: 0px 10px;
     border-radius: 10px;
 }
 img[alt="boton_play"]{
-    width: 25px;
+    width: 22px;
 }
 img[alt="boton_code"]{
-    width: 25px;
+    width: 22px;
 }
 
 /* Pie de pagína */

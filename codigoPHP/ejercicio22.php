@@ -17,11 +17,40 @@
        <?php 
        /**
         * @author: Gonzalo Junquera Lorenzo
-        * @since: 06/10/2025
+        * @since: 19/10/2025
         * 22.Construir un formulario para recoger un cuestionario realizado a una persona y mostrar en la misma página las preguntas y las respuestas recogidas.
         */
+       // Comprobar si se ha enviado el formulario (al menos el campo 'nombre')
         
-       ?>
+       if (isset($_REQUEST["nombre"])) {
+            echo "<h2>Resultados:</h2>";
+
+            // Usar htmlspecialchars para prevenir ataques XSS al mostrar la entrada del usuario
+            $nombre = htmlspecialchars($_REQUEST["nombre"]);
+            $edad = htmlspecialchars($_REQUEST["edad"]);
+            
+            echo "<p>Nombre: <strong>" . $nombre . "</strong></p>";
+            echo "<p>Edad: <strong>" . $edad . "</strong></p>";
+
+            // Botón para volver a recargar el formulario inicial
+            echo '<a href="' . $_SERVER['PHP_SELF'] . '"><button>Volver</button></a>';
+
+        } else {
+            ?>
+            
+            <form action="" method="get"> 
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre">
+                <br>
+                <label for="edad">Edad:</label>
+                <input type="number" name="edad">
+                <br>
+                <input type="submit" value="Enviar">
+            </form>
+            
+        <?php
+        }
+        ?>
     </main>
 </body>
 </html>

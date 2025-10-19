@@ -36,7 +36,7 @@
             </tr>
             <tr>
                 <td>1</td>
-                <td>Inicializar variables de los distintos tipos de datos básicos(string, int, float, bool) y mostrar los datos por pantalla (echo, print, printf, print_r,var_dump).</td>
+                <td>Inicializar variables string, int, float, bool y mostrar por pantalla (echo, print, printf, print_r,var_dump).</td>
                 <td><a href="codigoPHP/ejercicio01.php"><img src="webroot/media/images/play.png" alt="boton_play"></a></td>
                 <td><a href="mostrarcodigo/muestraejercicio01.php"><img src="webroot/media/images/code.webp" alt="boton_code"></a></td>
             </tr>
@@ -48,7 +48,7 @@
             </tr>
             <tr>
                 <td>3</td>
-                <td>Mostrar en tu página index la fecha y hora actual formateada en castellano. (Utilizar cuando sea posible la clase DateTime)</td>
+                <td>Mostrar en tu página index la fecha y hora actual formateada en castellano.</td>
                 <td><a href="codigoPHP/ejercicio03.php"><img src="webroot/media/images/play.png" alt="boton_play"></a></td>
                 <td><a href="mostrarcodigo/muestraejercicio03.php"><img src="webroot/media/images/code.webp" alt="boton_code"></a></td>
             </tr>
@@ -109,18 +109,18 @@
             <tr>
                 <td>13</td>
                 <td>Crear una función que cuente el número de visitas a la página actual desde una fecha concreta.</td>
-                <td><a href="codigoPHP/ejercicio13.php"></a></td>
-                <td><a href="mostrarcodigo/muestraejercicio13.php"></a></td>
+                <td><a href="codigoPHP/ejercicio13.php"><img src="webroot/media/images/play.png" alt="boton_play"></a></td>
+                <td><a href="mostrarcodigo/muestraejercicio13.php"><img src="webroot/media/images/code.webp" alt="boton_code"></a></td>
             </tr>
             <tr>
                 <td>14</td>
-                <td>Comprobar las librerías que estás utilizando en tu entorno de desarrollo y explotación. Crear tu propia librería de funciones y estudiar la forma de usarla en el entorno de desarrollo y en el de explotación.</td>
-                <td><a href="codigoPHP/ejercicio14.php"></a></td>
-                <td><a href="mostrarcodigo/muestraejercicio14.php"></a></td>
+                <td>Comprobar las librerías de tu entorno. Usar tu libreria.</td>
+                <td><a href="codigoPHP/ejercicio14.php"><img src="webroot/media/images/play.png" alt="boton_play"></a></td>
+                <td><a href="mostrarcodigo/muestraejercicio14.php"><img src="webroot/media/images/code.webp" alt="boton_code"></a></td>
             </tr>
             <tr>
                 <td>15</td>
-                <td>Crear e inicializar un array con el sueldo percibido de lunes a domingo. Recorrer el array para calcular el sueldo percibido durante la semana. (Array asociativo con los nombres de los días de la semana).</td>
+                <td>Crear e inicializar un array con el sueldo percibido de lunes a domingo.</td>
                 <td><a href="codigoPHP/ejercicio15.php"><img src="webroot/media/images/play.png" alt="boton_play"></a></td>
                 <td><a href="mostrarcodigo/muestraejercicio15.php"><img src="webroot/media/images/code.webp" alt="boton_code"></a></td>
             </tr>
@@ -132,49 +132,49 @@
             </tr>
             <tr>
                 <td>17</td>
-                <td>Inicializar un array (bidimensional con dos índices numéricos) donde almacenamos el nombre de las personas que tienen reservado el asiento en un teatro de 20 filas y 15 asientos por fila. (Inicializamos el array ocupando únicamente 5 asientos). Recorrer el array con distintas técnicas (foreach(), while(), for()) para mostrar los asientos ocupados en cada fila y las personas que lo ocupan.</td>
+                <td>Inicializar un array donde almacenamos el nombre de las personas que tienen asiento en un teatro.</td>
                 <td><a href="codigoPHP/ejercicio17.php"><img src="webroot/media/images/play.png" alt="boton_play"></a></td>
                 <td><a href="mostrarcodigo/muestraejercicio17.php"><img src="webroot/media/images/code.webp" alt="boton_code"></a></td>
             </tr>
             <tr>
                 <td>18</td>
                 <td>Recorrer el array anterior utilizando funciones para obtener el mismo resultado.</td>
-                <td><a href="codigoPHP/ejercicio18.php"></a></td>
-                <td><a href="mostrarcodigo/muestraejercicio18.php"></a></td>
+                <td><a href="codigoPHP/ejercicio18.php"><img src="webroot/media/images/play.png" alt="boton_play"></a></td>
+                <td><a href="mostrarcodigo/muestraejercicio18.php"><img src="webroot/media/images/code.webp" alt="boton_code"></a></td>
             </tr>
             <tr>
                 <td>19</td>
-                <td>Construir una librería de funciones de validación de campos de formularios (LibreríaValidacionFormularios.php) para utilizarla en los siguientes ejercicios. Discusión: diferencia entre librería de funciones y clase.</td>
-                <td><a href="codigoPHP/ejercicio19.php"></a></td>
-                <td><a href="mostrarcodigo/muestraejercicio19.php"></a></td>
+                <td>(LibreríaValidacionFormularios.php) para utilizarla en los siguientes ejercicios.</td>
+                <td><a href="codigoPHP/ejercicio19.php"><img src="webroot/media/images/play.png" alt="boton_play"></a></td>
+                <td><a href="mostrarcodigo/muestraejercicio19.php"><img src="webroot/media/images/code.webp" alt="boton_code"></a></td>
             </tr>
             <tr>
                 <td>20</td>
-                <td>Convertir la LibreriaValidacionFormularios.php en una clase ValidacionFormularios.php. El profesor facilitará a los alumnos la clase AAMMDDValidacionFormularios.php desarrollada en el curso anterior como punto de partida.</td>
+                <td>Convertir la LibreriaValidacionFormularios.php en una clase ValidacionFormularios.php.</td>
                 <td><a href="codigoPHP/ejercicio20.php"></a></td>
                 <td><a href="mostrarcodigo/muestraejercicio20.php"></a></td>
             </tr>
             <tr>
                 <td>21</td>
-                <td>Construir un formulario para recoger un cuestionario realizado a una persona y enviarlo a una página Tratamiento.php para que muestre las preguntas y las respuestas recogidas.</td>
+                <td>Formulario y enviarlo a una página Tratamiento.php.</td>
                 <td><a href="codigoPHP/ejercicio21.php"><img src="webroot/media/images/play.png" alt="boton_play"></a></td>
                 <td><a href="mostrarcodigo/muestraejercicio21.php"><img src="webroot/media/images/code.webp" alt="boton_code"></a></td>
             </tr>
             <tr>
                 <td>22</td>
-                <td>Construir un formulario para recoger un cuestionario realizado a una persona y mostrar en la misma página las preguntas y las respuestas recogidas.</td>
-                <td><a href="codigoPHP/ejercicio22.php"></a></td>
-                <td><a href="mostrarcodigo/muestraejercicio22.php"></a></td>
+                <td>Formulario y mostrar en la misma página.</td>
+                <td><a href="codigoPHP/ejercicio22.php"><img src="webroot/media/images/play.png" alt="boton_play"></a></td>
+                <td><a href="mostrarcodigo/muestraejercicio22.php"><img src="webroot/media/images/code.webp" alt="boton_code"></a></td>
             </tr>
             <tr>
                 <td>23</td>
-                <td>Construir un formulario para recoger un cuestionario realizado a una persona y mostrar en la misma página las preguntas y las respuestas recogidas; en el caso de que alguna respuesta esté vacía o errónea volverá a salir el formulario con el mensaje correspondiente.</td>
+                <td>Formulario, mostrar en la misma página; en caso de error volverá a salir el formulario.</td>
                 <td><a href="codigoPHP/ejercicio23.php"></a></td>
                 <td><a href="mostrarcodigo/muestraejercicio23.php"></a></td>
             </tr>
             <tr>
                 <td>24</td>
-                <td>Construir un formulario para recoger un cuestionario realizado a una persona y mostrar en la  misma página las preguntas y las respuestas recogidas; en el caso de que alguna respuesta esté vacía o errónea volverá a salir el formulario con el mensaje correspondiente, pero las respuestas que habíamos tecleado correctamente aparecerán en el formulario y no tendremos que volver a teclearlas.</td>
+                <td>Formulario, mostrar en la misma página; en caso de error volverá a salir el formulario prerrelleno</td>
                 <td><a href="codigoPHP/ejercicio24.php"></a></td>
                 <td><a href="mostrarcodigo/muestraejercicio24.php"></a></td>
             </tr>
@@ -186,7 +186,7 @@
             </tr>
             <tr>
                 <td>26</td>
-                <td>Probar la plantilla anterior desarrollando un formulario que recoja la temperatura y la presión atmosférica en una serie de fechas y (cuando el usuario lo decida) genere un informe con los datos recibidos y un promedios, mínimos y máximos de temperatura y presión atmosférica.</td>
+                <td>Probar la plantilla para formulario de temperatura y presión atmosférica en una serie de fechas.</td>
                 <td><a href="codigoPHP/ejercicio26.php"></a></td>
                 <td><a href="mostrarcodigo/muestraejercicio26.php"></a></td>
             </tr>

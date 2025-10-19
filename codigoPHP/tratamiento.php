@@ -20,6 +20,7 @@
         * @since: 17/10/2025
         * 21.Construir un formulario para recoger un cuestionario realizado a una persona y enviarlo a una página Tratamiento.php para que muestre las preguntas y las respuestas recogidas.
         */
+        echo "<h2>Resultados:</h2>";
         echo "<p>Nombre: ".$_REQUEST["nombre"]."</p>";
         echo "<p>Edad: ".$_REQUEST["edad"]."</p>";
        ?>

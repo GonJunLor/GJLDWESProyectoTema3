@@ -20,7 +20,7 @@
         * @since: 15/10/2025
         * 9.Mostrar el path donde se encuentra el fichero que se está ejecutando.
         */
-        echo "<b>Ruta del archivo actual:</b> " . __FILE__ . "<br>";
+        echo "<b>Ruta del archivo actual:</b> " . $_SERVER['SCRIPT_FILENAME'] . "<br>";
        ?>
     </main>
 </body>
