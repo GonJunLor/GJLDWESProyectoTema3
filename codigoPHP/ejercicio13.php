@@ -30,7 +30,7 @@
         */
         function contar_visitas($fecha_inicio) {
             // Archivo donde se va a guardar los timestamp actual
-            $archivo_log = 'logs/visitas.log';
+            $archivo_log = '../tmp/visitas.log';
 
             // Obtener el timestamp actual (segundos desde 1970)
             $timestamp_actual = (new DateTime())->getTimestamp();

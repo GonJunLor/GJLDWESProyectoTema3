@@ -32,7 +32,7 @@
         //include "231018libreriaValidacion.php";
         //include_once "231018libreriaValidacion.php";
         //require "231018libreriaValidacion.php";
-        require_once "231018libreriaValidacion.php";
+        require_once "../core/231018libreriaValidacion.php";
 
         // Uso de la libreria en este caso con funciones estáticas
         echo "<h3>Prueba libreria con validar DNI  (correcto no devuelve nada)</h3>";

@@ -14,6 +14,14 @@
         * @since: 19/10/2025
         * 18.Recorrer el array anterior utilizando funciones para obtener el mismo resultado.
         */
+       /* es usar las funciones Recorrer un array con funciones
+        reset() Sitúa el puntero interno al comienzo del array
+        next() Avanza el puntero interno una posición
+        prev() Mueve el puntero interno una posición hacia atrás
+        end() Sitúa el puntero interno al final del array
+        current() Devuelve el elemento de la posición actual
+        key() Devuelve la clave de la posición actual*/
+       
        // Creacion de función que recorrerá el array y mostrará el nombre de cada asiento 
        function mostrarAsientos($aTeatro){
             print '<table>';
@@ -39,6 +47,10 @@
             echo "</table>";
         }
 
+        // Constantes con datos iniciales
+        const FILAS = 20;
+        const ASIENTOS = 15;
+        
         // Creación de array teatro bidimensional de 20*15
         for($iFila=1;$iFila<=20;$iFila++){
             for($iColumna=1;$iColumna<=15;$iColumna++){

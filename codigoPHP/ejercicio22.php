@@ -22,23 +22,23 @@
         */
        // Comprobar si se ha enviado el formulario (al menos el campo 'nombre')
         
-       if (isset($_REQUEST["nombre"])) {
-            echo "<h2>Resultados:</h2>";
-
-            // Usar htmlspecialchars para prevenir ataques XSS al mostrar la entrada del usuario
-            $nombre = htmlspecialchars($_REQUEST["nombre"]);
-            $edad = htmlspecialchars($_REQUEST["edad"]);
+       if (isset($_REQUEST["nombre"])) {//Código que se ejecuta cuando se envía el formulario
             
+            // Usar htmlspecialchars para prevenir ataques XSS al mostrar la entrada del usuario
+            $nombre = $_REQUEST["nombre"];
+            $edad = $_REQUEST["edad"];
+            
+            echo "<h2>Resultados:</h2>";
             echo "<p>Nombre: <strong>" . $nombre . "</strong></p>";
             echo "<p>Edad: <strong>" . $edad . "</strong></p>";
 
             // Botón para volver a recargar el formulario inicial
             echo '<a href="' . $_SERVER['PHP_SELF'] . '"><button>Volver</button></a>';
-
-        } else {
+            
+        } else {//Código que se ejecuta antes de rellenar el formulario
             ?>
             
-            <form action="" method="get"> 
+            <form action="" method="post"> 
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre">
                 <br>

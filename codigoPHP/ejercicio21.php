@@ -8,7 +8,7 @@
         <h2>Gonzalo Junquera Lorenzo</h2>
     </nav>
     <main>
-        <form action="tratamiento.php" method="get">
+        <form action="tratamiento.php" method="post">
             <label for="nombre">Nombre:</label>
             <input type="text" id="nombre" name="nombre">
             <br>

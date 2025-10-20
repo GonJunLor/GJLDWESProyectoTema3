@@ -34,6 +34,11 @@
         * @since: 16/10/2025
         * 12.Mostrar el contenido de las variables superglobales (utilizando print_r() y foreach()).
         */
+        // Primero $_server con for each y luego session, cookie, request
+        echo '<h3>Usando foreach y echo para la variable $_SERVER</h3>';
+        foreach ($_SERVER as $clave => $valor) {
+            echo $clave." = ".$valor."<br>";
+        }
         
         echo '<h3>Usando foreach y echo para la variable $_GLOBAL</h3>';
         echo "<table>";
@@ -52,12 +57,6 @@
         
         echo '<h3>Usando var_dump para la variable $_SERVER</h3>';
         var_dump($_SERVER);
-        
-        echo '<h3>Usando foreach y echo para la variable $_SERVER</h3>';
-        foreach ($_SERVER as $clave => $valor) {
-            echo $clave." = ".$valor."<br>";
-        }
-        
 
        ?>
     </main>

@@ -169,14 +169,14 @@
             <tr>
                 <td>23</td>
                 <td>Formulario, mostrar en la misma página; en caso de error volverá a salir el formulario.</td>
-                <td><a href="codigoPHP/ejercicio23.php"></a></td>
-                <td><a href="mostrarcodigo/muestraejercicio23.php"></a></td>
+                <td><a href="codigoPHP/ejercicio23.php"><img src="webroot/media/images/play.png" alt="boton_play"></a></td>
+                <td><a href="mostrarcodigo/muestraejercicio23.php"><img src="webroot/media/images/code.webp" alt="boton_code"></a></td>
             </tr>
             <tr>
                 <td>24</td>
                 <td>Formulario, mostrar en la misma página; en caso de error volverá a salir el formulario prerrelleno</td>
-                <td><a href="codigoPHP/ejercicio24.php"></a></td>
-                <td><a href="mostrarcodigo/muestraejercicio24.php"></a></td>
+                <td><a href="codigoPHP/ejercicio24.php"><img src="webroot/media/images/play.png" alt="boton_play"></a></td>
+                <td><a href="mostrarcodigo/muestraejercicio24.php"><img src="webroot/media/images/code.webp" alt="boton_code"></a></td>
             </tr>
             <tr>
                 <td>25</td>
