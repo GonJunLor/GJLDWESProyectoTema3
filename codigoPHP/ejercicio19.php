@@ -17,10 +17,20 @@
        <?php 
        /**
         * @author: Gonzalo Junquera Lorenzo
-        * @since: 06/10/2025
+        * @since: 19/10/2025
         * 19.Construir una librería de funciones de validación de campos de formularios (LibreríaValidacionFormularios.php) para utilizarla en los siguientes ejercicios. Discusión: diferencia entre librería de funciones y clase.
         */
-        
+        // Importar y usar la libreria 231018libreriaValidacion.php
+        require_once "231018libreriaValidacion.php";
+
+        echo "<h3>Prueba libreria con validar email (correcto no devuelve nada)</h3>";
+        echo "<p>Email gonzalo: ". validacionFormularios::validarEmail('gonzalo') ."</p>";
+        echo "<p>Email gonzalo@mail.es: ". validacionFormularios::validarEmail('gonzalo@mail.es') ."</p>";
+        echo "<p>Email gonzalo@hotmail.com: ". validacionFormularios::validarEmail('gonzalo@hotmail.com') ."</p>";
+
+        echo "<h3>Prueba libreria con validar DNI  (correcto no devuelve nada)</h3>";
+        echo "<p>12345678Z: ". validacionFormularios::validarDni('12345678Z') ."</p>";
+        echo "<p>12365478J: ". validacionFormularios::validarDni('12365478J') ."</p>";
        ?>
     </main>
 </body>

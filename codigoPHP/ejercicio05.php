@@ -20,6 +20,11 @@
         * @since: 15/10/2025
         * 5.Inicializar y mostrar una variable que tiene una marca de tiempo (timestamp)
         */
+        $oFecha = new DateTime();
+        echo "<h3>Con clase DateTime()</h3>";
+        echo "Timestamp en segundos: ". $oFecha->getTimestamp() ." <br>";
+        echo "Timestamp en fecha y hora: ".$oFecha->format("Y-m-d H:i:s")."<br>";
+
         $timestamp = time();
         echo "<h3>Con función time()</h3>";
         echo "Timestamp en segundos: $timestamp <br>";

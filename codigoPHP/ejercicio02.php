@@ -21,10 +21,11 @@
         * 2.Inicializar y mostrar una variable heredoc.
         */
         $heredoc = <<<micadena
-        cadena de texto
-        de varias lineas
+            Cadena de texto
+            de varias lineas.
+            Última línea.
         micadena; 
-        echo($heredoc)
+        echo("<pre>".$heredoc."</pre>")
        ?>
     </main>
 </body>

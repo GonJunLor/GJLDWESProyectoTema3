@@ -12,15 +12,52 @@
         <div><a href="../indexProyectoTema3.php">Volver</a></div>
         <h2> <a href="../indexProyectoTema3.php">Tema 3</a> - Ejercicio 12</h2>
         <h2>Gonzalo Junquera Lorenzo</h2>
+        <style>
+            table{
+                border-collapse: collapse;
+            }
+            th{
+                background-color: gainsboro;
+                border: 1px solid black;
+                padding: 3px;
+            }
+            td{
+                border: 1px solid black;
+                padding: 3px;
+            }
+        </style>
     </nav>
     <main>
        <?php 
        /**
         * @author: Gonzalo Junquera Lorenzo
-        * @since: 06/10/2025
+        * @since: 16/10/2025
         * 12.Mostrar el contenido de las variables superglobales (utilizando print_r() y foreach()).
         */
+        // Primero $_server con for each y luego session, cookie, request
+        echo '<h3>Usando foreach y echo para la variable $_SERVER</h3>';
+        foreach ($_SERVER as $clave => $valor) {
+            echo $clave." = ".$valor."<br>";
+        }
         
+        echo '<h3>Usando foreach y echo para la variable $_GLOBAL</h3>';
+        echo "<table>";
+        foreach ($GLOBALS as $clave => $valor) {
+            foreach ($valor as $c => $v) {
+                echo "<tr>";
+                echo "<th>$".$clave."</th>";
+                echo "<th>".$c."</th>";
+                echo "<td>".$v."</td>";
+                echo "</tr>";
+            }  
+        }
+        echo "</table>";
+        echo '<h3>Usando print_r para la variable $_GLOBAL</h3>';
+        print_r($GLOBALS);
+        
+        echo '<h3>Usando var_dump para la variable $_SERVER</h3>';
+        var_dump($_SERVER);
+
        ?>
     </main>
 </body>
