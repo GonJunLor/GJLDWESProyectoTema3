@@ -17,10 +17,12 @@
        <?php 
        /**
         * @author: Gonzalo Junquera Lorenzo
-        * @since: 06/10/2025
+        * @since: 22/10/2025
         * 20.Convertir la LibreriaValidacionFormularios.php en una clase ValidacionFormularios.php. El profesor facilitará a los alumnos la clase AAMMDDValidacionFormularios.php desarrollada en el curso anterior como punto de partida.
         */
         
+        highlight_file("../core/231018libreriaValidacion.php")
+       
        ?>
     </main>
 </body>

@@ -151,8 +151,8 @@
             <tr>
                 <td>20</td>
                 <td>Convertir la LibreriaValidacionFormularios.php en una clase ValidacionFormularios.php.</td>
-                <td><a href="codigoPHP/ejercicio20.php"></a></td>
-                <td><a href="mostrarcodigo/muestraejercicio20.php"></a></td>
+                <td><a href="codigoPHP/ejercicio20.php"><img src="webroot/media/images/play.png" alt="boton_play"></a></td>
+                <td><a href="mostrarcodigo/muestraejercicio20.php"><img src="webroot/media/images/code.webp" alt="boton_code"></a></td>
             </tr>
             <tr>
                 <td>21</td>
