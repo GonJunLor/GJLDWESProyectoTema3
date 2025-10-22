@@ -32,7 +32,7 @@
             margin-left: 20px;
         }
         .aviso{font-size: 0.75em;}
-        input[name="enviar"]{
+        input[name="enviar"], button{
             padding: 5px 15px;
             margin: 10px 50px;
             border-radius: 20px;

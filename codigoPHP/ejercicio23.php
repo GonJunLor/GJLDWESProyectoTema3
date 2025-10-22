@@ -6,8 +6,38 @@
     <link rel="stylesheet" href="../webroot/css/estilos.css">
     <title>Gonzalo Junquera Lorenzo</title>
     <style>
-        #telefonoObligatorio {
+        #telefono {
             background-color: lightgoldenrodyellow;
+        }
+        main{
+            width:500px;
+            height: 300px;
+            margin: auto;
+            background-color: #eeeeee;
+            border: 2px solid lightgray;
+            border-radius: 20px;
+            margin-top: 20px;
+            padding: 10px;
+        }
+        main h2{
+            text-align: center;
+            margin: 10px;
+        }
+        form *{
+            margin-top: 10px; 
+        }
+        label{
+            display: inline-block;
+            width: 80px;
+            margin-left: 20px;
+        }
+        .aviso{font-size: 0.75em;}
+        input[name="enviar"], button{
+            padding: 5px 15px;
+            margin: 10px 50px;
+            border-radius: 20px;
+            background-color: rgb(73, 136, 187);
+            color: white;
         }
     </style>
 </head>
@@ -27,64 +57,69 @@
         */
        require_once "../core/231018libreriaValidacion.php"; // importamos nuestra libreria
        
-        if (isset($_REQUEST["nombre"])) {//Código que se ejecuta cuando se envía el formulario
-            
+        $entradaOK = true; //Variable que nos indica que todo va bien
+        $aErrores = ['nombre' => '', 'edad' => '', 'telefono'=> '']; //Array donde recogemos los mensajes de error
+        $aRespuestas=['nombre' => '', 'edad' => '', 'telefono'=> '']; //Array donde recogeremos la respuestas correctas (si $entradaOK)
+        
+        //Para cada campo del formulario: Validar entrada y actuar en consecuencia
+        if (isset($_REQUEST["enviar"])) {//Código que se ejecuta cuando se envía el formulario
+
             // Recuperar los valores del formulario
-            $nombre = $_REQUEST["nombre"];
-            $edad = $_REQUEST["edad"];
-            $telefono = $_REQUEST["telefono"];
+            $aRespuestas['nombre'] = $_REQUEST["nombre"];
+            $aRespuestas['edad'] = $_REQUEST["edad"];
+            $aRespuestas['telefono'] = $_REQUEST["telefono"];
             
             // Validamos el telefono con nuestra librería
-            $validarTelefono = validacionFormularios::validarTelefono($telefono);
+            $aErrores['telefono'] = validacionFormularios::validarTelefono($aRespuestas['telefono']);
             
-            if(empty($validarTelefono)&&!empty($telefono)){ // Comprobar si el telefono esta vacío es válido
-                // Si es correcto mostramos la respuesta
-                // Cambio el id a nombre obligatorio para poner el fondo amarillo
-                echo "<h2>Resultados:</h2>";
-                echo "<p>Nombre: <strong>" . $nombre . "</strong></p>";
-                echo "<p>Edad: <strong>" . $edad . "</strong></p>";
-                echo "<p>Teléfono: <strong>" . $telefono . "</strong></p>";
-
-                // Botón para volver a recargar el formulario inicial
-                echo '<a href="' . $_SERVER['PHP_SELF'] . '"><button>Volver</button></a>';
-                
-            } else {// Si es incorrecto mostramos el formulario de nuevo con el campo telefono en amarillo y un mensaje
-                ?>
-                    <h2>Datos personales</h2>
-                    <form action="" method="post"> 
-                        <label for="nombre">Nombre:</label>
-                        <input type="text" id="nombre" name="nombre" >
-                        <br>
-                        <label for="edad">Edad:</label>
-                        <input type="number" name="edad">
-                        <br>
-                        <label for="telefono">Telefono:</label> 
-                        <input type="text" id="telefonoObligatorio" name="telefono"><span><?php echo empty($telefono)? "Introduce un teléfono": $validarTelefono ?></span>
-                        <br>
-                        <input type="submit" value="Enviar">
-                    </form>
-
-                <?php
+            if(!empty($aRespuestas['telefono'])){ // Comprobar si el telefono está vacío
+                if(empty($aErrores['telefono'])){ // Comprobar si el telefono es válido
+                    $entradaOK = true;
+                } else { //Construir mensajes de error
+                    $entradaOK = false;
+                }
+            }else{ //Construir mensajes de error
+                $aErrores['telefono']='Introduce un teléfono';
+                $entradaOK = false;
             }
-
-
-        } else {//Código que se ejecuta antes de rellenar el formulario
-            ?>
-            <h2>Datos personales</h2>
-            <form action="" method="post"> 
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre">
-                <br>
-                <label for="edad">Edad:</label>
-                <input type="number" name="edad">
-                <br>
-                <label for="telefono">Telefono:</label>
-                <input type="text" id="telefono" name="telefono">
-                <br>
-                <input type="submit" value="Enviar">
-            </form>
             
-        <?php
+            //Limpiar campos malos
+            
+        } else {//Código que se ejecuta antes de rellenar el formulario
+            $entradaOK = false;
+        }
+        //Tratamiento del formulario
+        if($entradaOK){ //Cargar la variable $aRespuestas y tratamiento de datos OK
+            echo "<h2>Resultados:</h2>";
+            echo "<p>Nombre: <strong>" . $aRespuestas['nombre'] . "</strong></p>";
+            echo "<p>Edad: <strong>" . $aRespuestas['edad'] . "</strong></p>";
+            echo "<p>Teléfono: <strong>" . $aRespuestas['telefono'] . "</strong></p>";
+
+            // Botón para volver a recargar el formulario inicial
+            echo '<a href="' . $_SERVER['PHP_SELF'] . '"><button>Volver</button></a>';
+            
+        } else { //Mostrar el formulario hasta que lo rellenemos correctamente
+            //Mostrar formulario
+            //Mostrar los datos tecleados correctamente en intentos anteriores
+            //Mostrar mensajes de error (si los hay y el formulario no se muestra por primera vez)
+            ?>
+                <h2>Datos personales</h2>
+                <form action="" method="post"> 
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre">
+                    <br>
+                    <label for="edad">Edad:</label>
+                    <input type="number" name="edad">
+                    <br>
+                    <label for="telefono">Telefono:</label> 
+                    <input type="text" id="telefono" name="telefono"><span>*<?php echo $aErrores['telefono'] ?></span>
+                    <br>
+                    <input type="submit" value="Enviar" name="enviar">
+                    <p class="aviso">*Campos obligatorios</p>
+                </form>
+
+            <?php
+
         }
        ?>
     </main>

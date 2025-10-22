@@ -15,7 +15,7 @@
             <label for="edad">Edad:</label>
             <input type="number" name="edad">
             <br>
-            <input type="submit" value="Enviar">
+            <input type="submit" value="Enviar" name="enviar">
         </form>
        <?php 
        /**
@@ -33,14 +33,35 @@
     <link rel="stylesheet" href="../webroot/css/estilos.css">
     <title>Gonzalo Junquera Lorenzo</title>
     <style>
-        form{
-            margin: 30px;
+        main{
+            width:500px;
+            height: 300px;
+            margin: auto;
+            background-color: #eeeeee;
+            border: 2px solid lightgray;
+            border-radius: 20px;
+            margin-top: 20px;
+            padding: 10px;
         }
-        input{
-            margin-bottom: 5px;
+        main h2{
+            text-align: center;
+            margin: 10px;
+        }
+        form *{
+            margin-top: 10px; 
         }
         label{
-            width: 100px;
+            display: inline-block;
+            width: 80px;
+            margin-left: 20px;
+        }
+        .aviso{font-size: 0.75em;}
+        input[name="enviar"], button{
+            padding: 5px 15px;
+            margin: 10px 50px;
+            border-radius: 20px;
+            background-color: rgb(73, 136, 187);
+            color: white;
         }
     </style>
 </head>
