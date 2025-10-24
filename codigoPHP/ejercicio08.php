@@ -20,6 +20,9 @@
         * @since: 15/10/2025
         * 8.Mostrar la dirección IP del equipo desde el que estás accediendo.
         */
+        echo "<h3>Ip del cliente</h3>";
+        echo "<b>IP del equipo actual:</b> " . $_SERVER['REMOTE_ADDR'] . "<br>";
+        echo "<h3>Ip del servidor</h3>";
         echo "<b>IP del equipo actual:</b> " . $_SERVER['SERVER_ADDR'] . "<br>";
        ?>
     </main>
