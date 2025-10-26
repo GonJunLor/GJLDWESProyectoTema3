@@ -193,8 +193,8 @@
             <tr>
                 <td>27</td>
                 <td>Ejercicio extra para probar la plantilla del formulario que ha ganado el concurso</td>
-                <td><a href="codigoPHP/ejercicio27.php"></a></td>
-                <td><a href="mostrarcodigo/muestraejercicio27.php"></a></td>
+                <td><a href="codigoPHP/ejercicio27.php"><img src="webroot/media/images/play.png" alt="boton_play"></a></td>
+                <td><a href="mostrarcodigo/muestraejercicio27.php"><img src="webroot/media/images/code.webp" alt="boton_code"></a></td>
             </tr>
             <tr>
                 <td>28</td>
