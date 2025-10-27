@@ -207,7 +207,7 @@
     <footer>
     <div>
         <a href="/feed/rss.xml" type="application/rss+xml" target="_blank"><i class="fa-solid fa-rss"></i></a>
-        <a href="" target="_blank">
+        <a href="https://github.com/GonJunLor/GJLDWESProyectoTema3.git" target="_blank">
             <i class="fa-brands fa-github"></i>
         </a>
         <a href="https://mogutable.com/" target="_blank"><i class="fa-solid fa-house"></i></a>
