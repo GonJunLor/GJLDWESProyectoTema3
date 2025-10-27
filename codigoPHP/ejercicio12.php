@@ -1,35 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8"> 
-    <link rel="icon" type="image/png" href="../webroot/media/favicon/favicon-32x32.png">
-    <link rel="stylesheet" href="../webroot/css/estilos.css">
-    <title>Gonzalo Junquera Lorenzo</title>
-</head>
 <body>
     <div id="aviso">CURSO 2025/2026 -- DAW 2 -- I.E.S. LOS SAUCES</div>
     <nav>
         <div><a href="../indexProyectoTema3.php">Volver</a></div>
         <h2> <a href="../indexProyectoTema3.php">Tema 3</a> - Ejercicio 12</h2>
         <h2>Gonzalo Junquera Lorenzo</h2>
-        <style>
-            table{
-                border-collapse: collapse;
-            }
-            th{
-                background-color: gainsboro;
-                border: 1px solid black;
-                padding: 3px;
-            }
-            td{
-                border: 1px solid black;
-                padding: 3px;
-            }
-            h3{
-                text-align: center;
-                margin: 10px;
-            }
-        </style>
     </nav>
     <main>
        <?php 
@@ -190,4 +166,33 @@
        ?>
     </main>
 </body>
+<head>
+    <meta charset="UTF-8"> 
+    <link rel="icon" type="image/png" href="../webroot/media/favicon/favicon-32x32.png">
+    <link rel="stylesheet" href="../webroot/css/estilos.css">
+    <title>Gonzalo Junquera Lorenzo</title>
+            <style>
+            main{
+                margin: 20px 20px 20px 20px;
+            }
+            table{
+                border-collapse: collapse;
+                width: 100%;
+                table-layout: fixed;
+            }
+            th{
+                background-color: gainsboro;
+                border: 1px solid black;
+                padding: 3px;
+            }
+            td{
+                border: 1px solid black;
+                padding: 3px;
+            }
+            h3{
+                text-align: center;
+                margin: 10px;
+            }
+        </style>
+</head>
 </html>

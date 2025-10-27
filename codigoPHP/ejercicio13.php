@@ -1,11 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8"> 
-    <link rel="icon" type="image/png" href="../webroot/media/favicon/favicon-32x32.png">
-    <link rel="stylesheet" href="../webroot/css/estilos.css">
-    <title>Gonzalo Junquera Lorenzo</title>
-</head>
 <body>
     <div id="aviso">CURSO 2025/2026 -- DAW 2 -- I.E.S. LOS SAUCES</div>
     <nav>
@@ -74,9 +68,24 @@
         $total_visitas = contar_visitas($fecha_corte);
 
         // 2. Mostrar el resultado
-        echo "<h2>Contador de Visitas</h2>";
+        echo "<h3>Contador de Visitas</h3>";
         echo "<p>Desde el <b>" . $fecha_corte . "</b>, la página ha tenido un total de <b>" . $total_visitas . "</b> visitas.</p>";
        ?>
     </main>
 </body>
+<head>
+    <meta charset="UTF-8"> 
+    <link rel="icon" type="image/png" href="../webroot/media/favicon/favicon-32x32.png">
+    <link rel="stylesheet" href="../webroot/css/estilos.css">
+    <title>Gonzalo Junquera Lorenzo</title>
+    <style>
+        main{
+            margin: 20px 20px 20px 100px;
+        }
+        h3{
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
 </html>

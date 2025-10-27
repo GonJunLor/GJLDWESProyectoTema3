@@ -9,9 +9,9 @@
         td{
             border: 1px solid black;
             border-radius: 5px;
-            max-width: 60px;
-            width: 60px;
-            height: 40px;
+            max-width: 65px;
+            width: 65px;
+            height: 30px;
             text-align: center;
             background-color: rgb(188, 140, 119);
         }
@@ -20,6 +20,10 @@
         }
         .ocupado{
             background-color: greenyellow;
+        }
+        h3{
+            text-align: center;
+            margin: 10px 0px;
         }
     </style>
 </head>
@@ -34,17 +38,26 @@
        <?php 
        /**
         * @author: Gonzalo Junquera Lorenzo
-        * @since: 19/10/2025
+        * @since: 27/10/2025
         * 17.Inicializar un array (bidimensional con dos índices numéricos) donde almacenamos el nombre de las personas 
         * que tienen reservado el asiento en un teatro de 20 filas y 15 asientos por fila. (Inicializamos el array ocupando 
         * únicamente 5 asientos). Recorrer el array con distintas técnicas (foreach(), while(), for()) para mostrar los 
         * asientos ocupados en cada fila y las personas que lo ocupan.
         */
-        for($iFila=1;$iFila<=20;$iFila++){
-            for($iColumna=1;$iColumna<=15;$iColumna++){
+
+        // --- 1. Inicialización del array bidimensional para el teatro (20 filas x 15 asientos) ---
+        // Constantes con datos iniciales
+        const FILAS = 20;
+        const ASIENTOS = 15;
+
+        // Bucle FOR anidado para inicializar todos los asientos a 'null' (vacíos)
+        for($iFila=1;$iFila<=FILAS;$iFila++){
+            for($iColumna=1;$iColumna<=ASIENTOS;$iColumna++){
                 $aTeatro[$iFila][$iColumna]=null;
             }
         }
+
+        // --- 2. Simulación de reservas (Ocupación de asientos) ---
         $aTeatro[1][1]="Juan";
         $aTeatro[8][13]="Pepe";
         $aTeatro[3][8]="Alfredo";
@@ -52,28 +65,133 @@
         $aTeatro[2][2]="Miguel";
         $aTeatro[20][15]="Maria";
         
+        // =========================================================================
+        // === SECCIÓN A: Visualización de la Tabla HTML con FOREACH (Opción óptima)
+        // =========================================================================
+        echo '<h3>Tabla de Asientos (Recorrido con foreach)</h3>';
         print '<table>';
         
-        $fila = 0;
-        $numAsiento = 0;
-        foreach ($aTeatro as $numFila=>$aFila) {
+        
+        foreach ($aTeatro as $numFila=>$aFila) { // Recorremos las filas
             echo "<tr>";
-            $fila++;
-            //echo "<th>Pasillo ".$fila."</th>";
             echo "<th>Pasillo ".$numFila."</th>";
-            foreach ($aFila as $numAsiento=>$asiento) {
-                //$numAsiento++;
-                if(is_string($asiento)){
+            foreach ($aFila as $numAsiento=>$asiento) { // Recorremos los asientos dentro de la fila
+                if(is_string($asiento)){ // Asiento ocupado
                     echo '<td class="ocupado">'.$asiento.'</td>';
-                } else {
-                    echo '<td>'.$fila.'-'.$numAsiento.'</td>';
+                } else { // Asiento libre
+                    echo '<td>'.$numFila.'-'.$numAsiento.'</td>';
                 }
             }
-            $numAsiento = 0;
             echo "</tr>";
         }
         echo "</table>";
         
+        // =========================================================================
+        // === SECCIÓN B: Tabla generada con FOR Anidado
+        // =========================================================================
+
+        echo '<h3>Tabla de Asientos (Recorrido con for)</h3>';
+        echo '<table>';
+
+        for ($iFila = 1; $iFila <= FILAS; $iFila++) { // Recorremos las filas 
+            echo "<tr>";
+            echo "<th>Fila ".$iFila."</th>"; 
+            
+            // Recorremos los asientos dentro de la fila
+            for ($jAsiento = 1; $jAsiento <= ASIENTOS; $jAsiento++) {
+                
+                $nombreOcupante = $aTeatro[$iFila][$jAsiento];
+                
+                // Comprueba si está ocupado
+                if (is_string($nombreOcupante)) {
+                    echo '<td class="ocupado">'.$nombreOcupante.'</td>';
+                } else {
+                    echo '<td>'.$iFila.'-'.$jAsiento.'</td>';
+                }
+            }
+            echo "</tr>";
+        }
+
+        echo "</table>";
+
+        // =========================================================================
+        // === SECCIÓN C: Tabla generada con WHILE Anidado
+        // =========================================================================
+
+        echo '<h3>Tabla de Asientos (Recorrido con while)</h3>';
+        echo '<table>';
+
+        // Inicialización de contadores para el WHILE
+        $numFila = 1;
+
+        // Bucle WHILE externo para recorrer las filas
+        while ($numFila <= FILAS) {
+            echo "<tr>";
+            echo "<th>Fila ".$numFila."</th>"; 
+            
+            $numAsiento = 1; // 💡 Inicializamos el contador de asiento DENTRO del bucle de fila
+            
+            // Bucle WHILE interno para recorrer los asientos
+            while ($numAsiento <= ASIENTOS) {
+                
+                $nombreOcupante = $aTeatro[$numFila][$numAsiento];
+                
+                // Comprueba si está ocupado
+                if (is_string($nombreOcupante)) {
+                    echo '<td class="ocupado">'.$nombreOcupante.'</td>';
+                } else {
+                    echo '<td>'.$numFila.'-'.$numAsiento.'</td>';
+                }
+                
+                $numAsiento++; // Incremento obligatorio del contador del asiento
+            }
+            
+            echo "</tr>";
+            $numFila++; // Incremento obligatorio del contador de la fila
+        }
+
+        echo '</table>';
+
+        // =========================================================================
+        // === SECCIÓN D: Tabla generada con DO_WHILE usando next(), key(), current()
+        // =========================================================================
+
+        echo '<h3>Tabla de Asientos (Recorrido con do_while y funciones)</h3>';
+        echo '<table>';
+
+        // Reiniciar el puntero de la matriz principal a la primera fila
+        reset($aTeatro);
+
+        // Bucle WHILE externo: Recorre las filas
+        // La primera iteración es la Fila 1 (después de reset). next() se ejecuta al final para avanzar a la siguiente fila.
+        do {
+            $aFila = current($aTeatro); // Obtiene el array de asientos de la fila actual
+            $numFila = key($aTeatro); // Obtiene el número de fila actual
+
+            echo "<tr>";
+            echo "<th>Fila ".$numFila."</th>";
+
+            reset($aFila); // Mueve el puntero al primer asiento de esta fila
+
+            // Bucle WHILE interno: Recorre los asientos
+            do {
+                $asiento3 = current($aFila); // Obtiene el nombre del ocupante (o null)
+                $numAsiento = key($aFila); // Obtiene el número de asiento actual
+
+                // Comprueba si está ocupado
+                if (is_string($asiento3)) {
+                    echo '<td class="ocupado">'.$asiento3.'</td>';
+                }else {
+                    echo '<td>'.$numFila.'-'.$numAsiento.'</td>';
+                }
+
+            } while (next($aFila)); // Avanza al siguiente asiento
+
+            echo "</tr>";
+
+        } while (next($aTeatro)); // Avanza a la siguiente fila
+
+        echo '</table>';
        ?>
     </main>
 </body>

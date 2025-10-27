@@ -1,11 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8"> 
-    <link rel="icon" type="image/png" href="../webroot/media/favicon/favicon-32x32.png">
-    <link rel="stylesheet" href="../webroot/css/estilos.css">
-    <title>Gonzalo Junquera Lorenzo</title>
-</head>
 <body>
     <div id="aviso">CURSO 2025/2026 -- DAW 2 -- I.E.S. LOS SAUCES</div>
     <nav>
@@ -17,7 +11,7 @@
        <?php 
        /**
         * @author: Gonzalo Junquera Lorenzo
-        * @since: 09/10/2025
+        * @since: 27/10/2025
         * 3.Mostrar en tu página index la fecha y hora actual formateada en castellano. (Utilizar cuando sea posible la clase DateTime)
         */
        //setlocale("Europe/Madrid");
@@ -25,14 +19,6 @@
        // Establecer el locale (idioma) en español
         setlocale(LC_TIME, 'es_ES.UTF-8', 'es_ES', 'spanish');
         $ofecha = new DateTime();
-        
-        echo "<h3>Diagnóstico de setlocale:</h3>";
-        // Esta línea te dirá qué locale PHP realmente cargó
-        $locale_cargado = setlocale(LC_TIME, 0); 
-        echo "El locale cargado es: <span>" . $locale_cargado . "</span><br>";
-
-        // Esta línea te mostrará la fecha con el locale cargado
-        echo "Fecha de prueba: <span>" . strftime("%A, %d de %B de %Y") . "</span>";
 
         echo "<h3>Fecha y hora con formato personalizado</h3>";
         echo (($ofecha->format("Y-m-d H:i:s"))."<br>");
@@ -46,7 +32,7 @@
         https://www.php.net/manual/es/datetime.format.php
         */
 
-        echo('<h3>Usando el timestamp de DateTime y strftime, los dias y los meses están en español</h3> ');
+        echo('<h3>Fecha con el día y el mes en español</h3> ');
         echo strftime("%A, %d de %B de %Y %H:%M:%S", $ofecha->getTimestamp());
         
         echo "<h3>Fecha y hora con formato pre-establecido</h3>";
@@ -55,4 +41,18 @@
        ?>
     </main>
 </body>
+<head>
+    <meta charset="UTF-8"> 
+    <link rel="icon" type="image/png" href="../webroot/media/favicon/favicon-32x32.png">
+    <link rel="stylesheet" href="../webroot/css/estilos.css">
+    <title>Gonzalo Junquera Lorenzo</title>
+    <style>
+        main{
+            margin: 20px 20px 20px 100px;
+        }
+        h3{
+            margin-top: 20px;
+        }
+    </style>
+</head>
 </html>
