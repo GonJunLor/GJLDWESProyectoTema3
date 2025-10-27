@@ -267,7 +267,7 @@
                         <div class="campo">
                             <label>¿Cómo te sientes hoy? <span class="obligatorio">(* y una única selección permitida)</span> </label>
                             <div class="opciones-radio">
-                                <label>MUY MAL</label><input type="radio" name="sentimiento" value="MUY MAL" <?php echo $_REQUEST['sentimiento']=="MUY MAL"?'checked':'' ?>>
+                                <label>MUY MAL</label><input type="radio" name="sentimiento" value="MUY MAL" <?php echo $_REQUEST['sentimiento']=="MUY MAL"?'checked':'unchecked' ?>>
                                 <label>MAL</label><input type="radio" name="sentimiento" value="MAL" <?php echo $_REQUEST['sentimiento']=="MAL"?'checked':'' ?>>
                                 <label>REGULAR</label><input type="radio" name="sentimiento" value="REGULAR" <?php echo $_REQUEST['sentimiento']=="REGULAR"?'checked':'' ?>>
                                 <label>BIEN</label><input type="radio" name="sentimiento" value="BIEN" <?php echo $_REQUEST['sentimiento']=="BIEN"?'checked':'' ?>>
@@ -283,7 +283,7 @@
                         <div class="campo">
                             <label for="vacaciones">¿Cómo se presentan las vacaciones de navidad? <span class="obligatorio">(* Cuadro de lista con los siguientes valores posibles: Ni idea, Con la familia, De fiesta, Trabajando, Estudiando DWES)<?php echo $aErrores['vacaciones']??'' ?></span></label>
                             <select id="vacaciones" name="vacaciones">
-                                <option value="" disabled selected hidden></option> 
+                                <option value="" selected></option> 
                                 <option value="Ni idea" <?php echo $_REQUEST['vacaciones']=="Ni idea"?'selected':'' ?>>Ni idea</option>
                                 <option value="Con la familia" <?php echo $_REQUEST['vacaciones']=="Con la familia"?'selected':'' ?>>Con la familia</option>
                                 <option value="De fiesta" <?php echo $_REQUEST['vacaciones']=="De fiesta"?'selected':'' ?>>De fiesta</option>

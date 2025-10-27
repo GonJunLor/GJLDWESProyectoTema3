@@ -22,7 +22,18 @@
         */
        //setlocale("Europe/Madrid");
        date_default_timezone_set('Europe/Madrid');
+       // Establecer el locale (idioma) en español
+        setlocale(LC_TIME, 'es_ES.UTF-8', 'es_ES', 'spanish');
         $ofecha = new DateTime();
+        
+        echo "<h3>Diagnóstico de setlocale:</h3>";
+        // Esta línea te dirá qué locale PHP realmente cargó
+        $locale_cargado = setlocale(LC_TIME, 0); 
+        echo "El locale cargado es: <span>" . $locale_cargado . "</span><br>";
+
+        // Esta línea te mostrará la fecha con el locale cargado
+        echo "Fecha de prueba: <span>" . strftime("%A, %d de %B de %Y") . "</span>";
+
         echo "<h3>Fecha y hora con formato personalizado</h3>";
         echo (($ofecha->format("Y-m-d H:i:s"))."<br>");
         echo ($ofecha->format("l, d F Y")."<br>");
@@ -35,6 +46,9 @@
         https://www.php.net/manual/es/datetime.format.php
         */
 
+        echo('<h3>Usando el timestamp de DateTime y strftime, los dias y los meses están en español</h3> ');
+        echo strftime("%A, %d de %B de %Y %H:%M:%S", $ofecha->getTimestamp());
+        
         echo "<h3>Fecha y hora con formato pre-establecido</h3>";
         echo $ofecha->format(DateTimeInterface::RFC2822), "\n";
         echo $ofecha->format(DateTimeInterface::W3C);
