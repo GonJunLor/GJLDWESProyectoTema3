@@ -58,7 +58,7 @@ class validacionFormularios {  //ELIMINA EL METODO VALIDATEDATE Y LO INCLUYE EN 
         $cadena = htmlspecialchars(strip_tags(trim((string) $cadena)));
         $mensajeError = null;
 
-        //Si es olbigatorio se comprueba si está vacío, si no es obligatorio, no es necesario
+        //Si es obligatorio se comprueba si está vacío, si no es obligatorio, no es necesario
         if ($obligatorio == 1) {
             $mensajeError = self::comprobarNoVacio($cadena);
         }

@@ -151,8 +151,8 @@
             <tr>
                 <td>20</td>
                 <td>Convertir la LibreriaValidacionFormularios.php en una clase ValidacionFormularios.php.</td>
-                <td><a href="codigoPHP/ejercicio20.php"></a></td>
-                <td><a href="mostrarcodigo/muestraejercicio20.php"></a></td>
+                <td><a href="codigoPHP/ejercicio20.php"><img src="webroot/media/images/play.png" alt="boton_play"></a></td>
+                <td><a href="mostrarcodigo/muestraejercicio20.php"><img src="webroot/media/images/code.webp" alt="boton_code"></a></td>
             </tr>
             <tr>
                 <td>21</td>
@@ -193,8 +193,8 @@
             <tr>
                 <td>27</td>
                 <td>Ejercicio extra para probar la plantilla del formulario que ha ganado el concurso</td>
-                <td><a href="codigoPHP/ejercicio27.php"></a></td>
-                <td><a href="mostrarcodigo/muestraejercicio27.php"></a></td>
+                <td><a href="codigoPHP/ejercicio27.php"><img src="webroot/media/images/play.png" alt="boton_play"></a></td>
+                <td><a href="mostrarcodigo/muestraejercicio27.php"><img src="webroot/media/images/code.webp" alt="boton_code"></a></td>
             </tr>
             <tr>
                 <td>28</td>
@@ -207,7 +207,7 @@
     <footer>
     <div>
         <a href="/feed/rss.xml" type="application/rss+xml" target="_blank"><i class="fa-solid fa-rss"></i></a>
-        <a href="" target="_blank">
+        <a href="https://github.com/GonJunLor/GJLDWESProyectoTema3.git" target="_blank">
             <i class="fa-brands fa-github"></i>
         </a>
         <a href="https://mogutable.com/" target="_blank"><i class="fa-solid fa-house"></i></a>

@@ -14,16 +14,9 @@
         * @since: 19/10/2025
         * 18.Recorrer el array anterior utilizando funciones para obtener el mismo resultado.
         */
-       /* es usar las funciones Recorrer un array con funciones
-        reset() Sitúa el puntero interno al comienzo del array
-        next() Avanza el puntero interno una posición
-        prev() Mueve el puntero interno una posición hacia atrás
-        end() Sitúa el puntero interno al final del array
-        current() Devuelve el elemento de la posición actual
-        key() Devuelve la clave de la posición actual*/
        
        // Creacion de función que recorrerá el array y mostrará el nombre de cada asiento 
-       function mostrarAsientos($aTeatro){
+        function mostrarAsientos($aTeatro){
             print '<table>';
             
             $fila = 0;
