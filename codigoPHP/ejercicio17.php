@@ -176,10 +176,11 @@
             // Bucle WHILE interno: Recorre los asientos
             do {
                 $asiento3 = current($aFila); // Obtiene el nombre del ocupante (o null)
+                //$asiento3 = 
                 $numAsiento = key($aFila); // Obtiene el número de asiento actual
 
                 // Comprueba si está ocupado
-                if (is_string($asiento3)) {
+                if (!is_null($asiento3)) {
                     echo '<td class="ocupado">'.$asiento3.'</td>';
                 }else {
                     echo '<td>'.$numFila.'-'.$numAsiento.'</td>';
@@ -192,6 +193,43 @@
         } while (next($aTeatro)); // Avanza a la siguiente fila
 
         echo '</table>';
+        
+        /*
+        reset($aAsientosTeatro);
+        while (current($aAsientosTeatro)) {
+            $filaActual = current($aAsientosTeatro);
+            $indiceFila = key($aAsientosTeatro);
+
+            echo '<div class="fila">';
+            echo "<div class='nombreFila'>Fila {$indiceFila}</div>";
+
+            reset($filaActual); //se situa el puntero al comienzo del array
+            while (current($filaActual)) {
+                $nombre = current($filaActual);
+                $indiceAsiento = key($filaActual);
+
+                if ($nombre !== '') {
+                    $clase = 'ocupado';
+                    $textoAsiento = $nombre;
+                } else {
+                    $clase = 'libre';
+                    $textoAsiento = "F{$indiceFila} A{$indiceAsiento}";
+                }
+
+                echo "<div class='asiento $clase' >";
+                echo $textoAsiento;
+                echo '</div>';
+
+                next($filaActual);
+            }
+
+            echo "<div class='nombreFila'>Fila {$indiceFila}</div>";
+            echo '</div>';
+
+            next($aAsientosTeatro);
+        }
+        */
+        
        ?>
     </main>
 </body>
