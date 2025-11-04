@@ -19,13 +19,17 @@
         $entradaOK = true; //Variable que nos indica que todo va bien
         $aErrores = [  //Array donde recogemos los mensajes de error
             'nombre' => '', 
-            'edad' => '', 
-            'telefono'=> ''
+            'fecha_nacimiento'=>'',
+            'codpostal' => '', 
+            'telefono'=> '',
+            'aceptarRgpd'=>''
         ];
         $aRespuestas=[ //Array donde recogeremos la respuestas correctas (si $entradaOK)
             'nombre' => '', 
-            'edad' => '', 
-            'telefono'=> ''
+            'fecha_nacimiento'=>'',
+            'codpostal' => '', 
+            'telefono'=> '',
+            'aceptarRgpd'=>''
         ]; 
         
         //Para cada campo del formulario: Validar entrada y actuar en consecuencia
@@ -33,7 +37,9 @@
 
             // Validamos los datos del formulario
             $aErrores['nombre']= validacionFormularios::comprobarAlfabetico($_REQUEST['nombre'],100,0,1,);
-            $aErrores['edad']= validacionFormularios::comprobarEntero($_REQUEST['edad']);
+            $ofechaActual = new DateTime(); // creamos la fecha actual para pasarla al validarfecha
+            $aErrores['fecha_nacimiento']= validacionFormularios::validarFecha($_REQUEST['fecha_nacimiento'],$ofechaActual->format('m/d/Y'));
+            $aErrores['codpostal']= validacionFormularios::comprobarEntero($_REQUEST['codpostal']);
             $aErrores['telefono'] = validacionFormularios::validarTelefono($_REQUEST['telefono']);
             
             if(!empty($_REQUEST['telefono'])){ // Comprobar si el telefono está vacío
@@ -52,11 +58,16 @@
         }
         //Tratamiento del formulario
         if($entradaOK){ //Cargar la variable $aRespuestas y tratamiento de datos OK
-            
+            date_default_timezone_set('Europe/Madrid');
+            setlocale(LC_TIME, 'es_ES.utf8');
+
             // Recuperar los valores del formulario
             $aRespuestas['nombre'] = $_REQUEST['nombre'];
-            $aRespuestas['edad'] = $_REQUEST['edad'];
+            $ofechaNacimiento = new DateTime($_REQUEST['fecha_nacimiento']);
+            $aRespuestas['fecha_nacimiento'] = strftime("%A, %d de %B de %Y", $ofechaNacimiento->getTimestamp());
+            $aRespuestas['codpostal'] = $_REQUEST['codpostal'];
             $aRespuestas['telefono'] = $_REQUEST['telefono'];
+            $aRespuestas['aceptarRgpd'] = $_REQUEST['aceptarRgpd']?'SI':'NO';
             
             echo "<h2>Resultados:</h2>";
             foreach ($aRespuestas as $campo => $valor) {
@@ -71,19 +82,30 @@
             //Mostrar los datos tecleados correctamente en intentos anteriores
             //Mostrar mensajes de error (si los hay y el formulario no se muestra por primera vez)
             ?>
-                <h2>Datos personales</h2>
+                <h2>DATOS PERSONALES</h2>
                 <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post"> 
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" value="<?php echo $_REQUEST['nombre']??'' ?>"><span class="error"><?php echo $aErrores['nombre'] ?></span>
+                    <label for="tipoUsuario">Tipo usuario:</label>
+                    <input type="text" id="tipoUsuario" name="tipoUsuario" value="Administrador" readonly>
                     <br>
-                    <label for="edad">Edad:</label>
-                    <input type="number" name="edad" value="<?php echo $_REQUEST['edad']??'' ?>">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" value="<?php echo $_REQUEST['nombre']??'' ?>">
+                    <span class="error"><?php echo $aErrores['nombre'] ?></span>
+                    <br>
+                    <label for="fecha_nacimiento">Fecha de nacimiento: </label>
+                    <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" value="<?php echo $_REQUEST['fecha_nacimiento']??'' ?>">
+                    <span class="error"><?php echo $aErrores['fecha_nacimiento']??'' ?></span>
+                    <br>
+                    <label for="codpostal">Codigo Postal:</label>
+                    <input type="number" name="codpostal" value="<?php echo $_REQUEST['codpostal']??'' ?>">
                     <br>
                     <label for="telefono">Telefono:</label> 
-                    <input type="text" id="telefono" name="telefono" value="<?php echo $_REQUEST['telefono']??'' ?>"><span class="error">*<?php echo $aErrores['telefono'] ?></span>
+                    <input type="text" id="telefono" name="telefono" value="<?php echo $_REQUEST['telefono']??'' ?>">
+                    <span class="error"><?php echo $aErrores['telefono'] ?></span>
                     <br>
+                    <label for="aceptarRgpd">¿Aceptas el RGPD?:</label> 
+                    <input type="checkbox" name="aceptarRgpd" id="aceptarRgpd">
+                    <br>                    
                     <input type="submit" value="Enviar" name="enviar">
-                    <p class="aviso">*Campos obligatorios</p>
                 </form>
 
             <?php
@@ -99,12 +121,12 @@
     <link rel="stylesheet" href="../webroot/css/estilos.css">
     <title>Gonzalo Junquera Lorenzo</title>
     <style>
-        #telefono {
+        #telefono, #nombre {
             background-color: lightgoldenrodyellow;
         }
         main{
-            width:500px;
-            height: 300px;
+            width:600px;
+            height: 450px;
             margin: auto;
             background-color: #eeeeee;
             border: 2px solid lightgray;
@@ -113,26 +135,63 @@
             padding: 10px;
         }
         main h2{
+            font-family: 'Times New Roman', Times, serif;
             text-align: center;
             margin: 10px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #335d7fff;
         }
+        main p{margin:10px 20px;}
         form *{
             margin-top: 10px; 
         }
         label{
+            font-family: 'Times New Roman', Times, serif;
             display: inline-block;
-            width: 80px;
+            width: 120px;
+            margin-left: 20px;
+            font-size: 1.2rem;
+        }
+        label[for="aceptarRgpd"]{width: 200px;}
+        label[for="fecha_nacimiento"]{width: 170px;}
+        .aviso{
+            font-size: 0.75rem;
             margin-left: 20px;
         }
-        .aviso{font-size: 0.75em;}
-        input[name="enviar"], button{
-            padding: 5px 15px;
-            margin: 10px 50px;
-            border-radius: 20px;
-            background-color: rgb(73, 136, 187);
-            color: white;
+        input{
+            padding: 5px 10px;
+            margin-top: 20px;
+            margin-right: 5px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            font-family: 'Times New Roman', Times, serif;
+            border: 0px solid grey;
         }
-        .error{color: red;}
+        input[readonly]{
+            background-color: #d3d3d3ff;
+            color: #6e6e6eff;
+        }
+        input[type="date"]{width: 190px;}
+        input[type="checkbox"]{
+            width: 20px;
+            height: 18px;
+        }
+        input[name="enviar"], button{
+            padding: 10px 25px;
+            font-size: 1.2rem;
+            margin: 20px 120px;
+            border-radius: 20px;
+            background-color: #4988bbff;
+            color: white;
+            font-family: 'Times New Roman', Times, serif;
+            border: 0px solid #252525ff;
+        }
+        .error{
+            font-family: 'Times New Roman', Times, serif;
+            color: red;
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 </html>

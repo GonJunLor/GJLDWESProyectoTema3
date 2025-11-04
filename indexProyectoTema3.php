@@ -211,8 +211,8 @@
             <i class="fa-brands fa-github"></i>
         </a>
         <a href="https://mogutable.com/" target="_blank"><i class="fa-solid fa-house"></i></a>
-        <a id="w3c" href="https://validator.w3.org/check?uri=https://daw108.ieslossauces.es/108EDDProyectoEDD/index.html" target="_blank">          
-            <img src="/webroot/media/images/W3C.png" alt="Validado por W3C" width="55" >        
+        <a id="w3c" href="https://validator.w3.org/check?uri=https://gonzalojunlor.ieslossauces.es/GJLDWESProyectoTema3/indexProyectoTema3.php" target="_blank">          
+            <img src="/webroot/media/images/W3C.png" alt="W3C" width="55" >        
         </a>
     </div>
     2025-26 IES LOS SAUCES. &#169;Todos los derechos reservados. 
