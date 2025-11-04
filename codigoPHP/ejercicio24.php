@@ -83,6 +83,7 @@
             //Mostrar mensajes de error (si los hay y el formulario no se muestra por primera vez)
             ?>
                 <h2>DATOS PERSONALES</h2>
+                <hr>
                 <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post"> 
                     <label for="tipoUsuario">Tipo usuario:</label>
                     <input type="text" id="tipoUsuario" name="tipoUsuario" value="Administrador" readonly>
