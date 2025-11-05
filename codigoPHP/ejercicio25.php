@@ -135,7 +135,7 @@
     <link rel="stylesheet" href="../webroot/css/estilos.css">
     <title>Gonzalo Junquera Lorenzo</title>
     <style>
-        #telefono, #nombre {
+        .obligatorio {
             background-color: lightgoldenrodyellow;
         }
         main{
