@@ -74,7 +74,7 @@
         
         foreach ($aTeatro as $numFila=>$aFila) { // Recorremos las filas
             echo "<tr>";
-            echo "<th>Pasillo ".$numFila."</th>";
+            echo "<th>Fila ".$numFila."</th>";
             foreach ($aFila as $numAsiento=>$asiento) { // Recorremos los asientos dentro de la fila
                 if(is_string($asiento)){ // Asiento ocupado
                     echo '<td class="ocupado">'.$asiento.'</td>';
@@ -153,10 +153,10 @@
         echo '</table>';
 
         // =========================================================================
-        // === SECCIÓN D: Tabla generada con DO_WHILE usando next(), key(), current()
+        // === SECCIÓN D: Tabla generada con WHILE usando next(), key(), current()
         // =========================================================================
 
-        echo '<h3>Tabla de Asientos (Recorrido con do_while y funciones)</h3>';
+        echo '<h3>Tabla de Asientos (Recorrido con while y funciones)</h3>';
         echo '<table>';
 
         // Reiniciar el puntero de la matriz principal a la primera fila
@@ -164,71 +164,31 @@
 
         // Bucle WHILE externo: Recorre las filas
         // La primera iteración es la Fila 1 (después de reset). next() se ejecuta al final para avanzar a la siguiente fila.
-        do {
-            $aFila = current($aTeatro); // Obtiene el array de asientos de la fila actual
-            $numFila = key($aTeatro); // Obtiene el número de fila actual
+        while (($filaActual = current($aTeatro)) !== false) {
+            $indiceFila = key($aTeatro);
 
-            echo "<tr>";
-            echo "<th>Fila ".$numFila."</th>";
-
-            reset($aFila); // Mueve el puntero al primer asiento de esta fila
-
-            // Bucle WHILE interno: Recorre los asientos
-            do {
-                $asiento3 = current($aFila); // Obtiene el nombre del ocupante (o null)
-                //$asiento3 = 
-                $numAsiento = key($aFila); // Obtiene el número de asiento actual
-
-                // Comprueba si está ocupado
-                if (!is_null($asiento3)) {
-                    echo '<td class="ocupado">'.$asiento3.'</td>';
-                }else {
-                    echo '<td>'.$numFila.'-'.$numAsiento.'</td>';
-                }
-
-            } while (next($aFila)); // Avanza al siguiente asiento
-
-            echo "</tr>";
-
-        } while (next($aTeatro)); // Avanza a la siguiente fila
-
-        echo '</table>';
-        
-        /*
-        reset($aAsientosTeatro);
-        while (current($aAsientosTeatro)) {
-            $filaActual = current($aAsientosTeatro);
-            $indiceFila = key($aAsientosTeatro);
-
-            echo '<div class="fila">';
-            echo "<div class='nombreFila'>Fila {$indiceFila}</div>";
+            echo '<tr>';
+            echo "<th>Fila ".$indiceFila."</th>";
 
             reset($filaActual); //se situa el puntero al comienzo del array
-            while (current($filaActual)) {
-                $nombre = current($filaActual);
+            while (($nombre = current($filaActual)) !== false) {
                 $indiceAsiento = key($filaActual);
 
-                if ($nombre !== '') {
-                    $clase = 'ocupado';
-                    $textoAsiento = $nombre;
+                // Comprueba si está ocupado
+                if (is_string($nombre)) {
+                    echo '<td class="ocupado">'.$nombre.'</td>';
                 } else {
-                    $clase = 'libre';
-                    $textoAsiento = "F{$indiceFila} A{$indiceAsiento}";
+                    echo '<td>'.$indiceFila.'-'.$indiceAsiento.'</td>';
                 }
-
-                echo "<div class='asiento $clase' >";
-                echo $textoAsiento;
-                echo '</div>';
 
                 next($filaActual);
             }
+            echo '</tr>';
 
-            echo "<div class='nombreFila'>Fila {$indiceFila}</div>";
-            echo '</div>';
-
-            next($aAsientosTeatro);
+            next($aTeatro);
         }
-        */
+        echo '</table>';
+        
         
        ?>
     </main>

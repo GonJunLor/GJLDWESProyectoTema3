@@ -14,6 +14,13 @@
         * @since: 15/10/2025
         * 6.Operar con fechas: calcular la fecha y el día de la semana de dentro de 60 días.
         */
+        // Establecer la zona horaria 
+        date_default_timezone_set('Europe/Madrid');
+        $ofecha = new DateTime();
+        // Establecer el locale (idioma) en español
+        setlocale(LC_TIME, 'es_ES.UTF-8', 'es_ES', 'spanish');
+        https://www.php.net/manual/es/class.dateinterval.php
+        
         $ofechaHora = new DateTime();
         echo "<h3>Fecha actual</h3>";
         echo ($ofechaHora->format("Y-m-d H:i:s"))."<br>";

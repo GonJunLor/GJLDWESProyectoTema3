@@ -22,7 +22,7 @@
 <body>
     <div id="aviso">CURSO 2025/2026 -- DAW 2 -- I.E.S. LOS SAUCES</div>
     <nav>
-        <div><a href="/">Menu</a></div>
+        <div><a href="../GJLDWESProyectoDWES/indexProyectoDWES.php">Volver</a></div>
         <h2> <a href="../GJLDWESProyectoDWES/indexProyectoDWES.php">DWES</a>  - UT3: CARACTERÍSTICAS DEL LENGUAJE PHP</h2>
         <h2>Gonzalo Junquera Lorenzo</h2>
     </nav>
@@ -181,8 +181,8 @@
             <tr>
                 <td>25</td>
                 <td>Trabajar en PlantillaFormulario.php mi plantilla para hacer formularios como churros.</td>
-                <td><a href="codigoPHP/ejercicio25.php"></a></td>
-                <td><a href="mostrarcodigo/muestraejercicio25.php"></a></td>
+                <td><a href="codigoPHP/ejercicio25.php"><img src="webroot/media/images/play.png" alt="boton_play"></a></td>
+                <td><a href="mostrarcodigo/muestraejercicio25.php"><img src="webroot/media/images/code.webp" alt="boton_code"></a></td>
             </tr>
             <tr>
                 <td>26</td>
@@ -211,8 +211,8 @@
             <i class="fa-brands fa-github"></i>
         </a>
         <a href="https://mogutable.com/" target="_blank"><i class="fa-solid fa-house"></i></a>
-        <a id="w3c" href="https://validator.w3.org/check?uri=https://daw108.ieslossauces.es/108EDDProyectoEDD/index.html" target="_blank">          
-            <img src="/webroot/media/images/W3C.png" alt="Validado por W3C" width="55" >        
+        <a id="w3c" href="https://validator.w3.org/check?uri=https://gonzalojunlor.ieslossauces.es/GJLDWESProyectoTema3/indexProyectoTema3.php" target="_blank">          
+            <img src="/webroot/media/images/W3C.png" alt="W3C" width="55" >        
         </a>
     </div>
     2025-26 IES LOS SAUCES. &#169;Todos los derechos reservados. 
