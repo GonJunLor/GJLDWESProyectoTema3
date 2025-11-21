@@ -1,121 +1,79 @@
-<!DOCTYPE html>
-<html lang="es">
-<body>
-    <div id="aviso">CURSO 2025/2026 -- DAW 2 -- I.E.S. LOS SAUCES</div>
-    <nav>
-        <div><a href="../indexProyectoTema3.php">Volver</a></div>
-        <h2> <a href="../indexProyectoTema3.php">Tema 3</a> - Ejercicio 24</h2>
-        <h2>Gonzalo Junquera Lorenzo</h2>
-    </nav>
-    <main>
-       <?php 
-       /**
-        * @author: Gonzalo Junquera Lorenzo
-        * @since: 24/10/2025
-        * 24.Construir un formulario para recoger un cuestionario realizado a una persona y mostrar en la  misma página las preguntas y las respuestas recogidas; en el caso de que alguna respuesta esté vacía o errónea volverá a salir el formulario con el mensaje correspondiente, pero las respuestas que habíamos tecleado correctamente aparecerán en el formulario y no tendremos que volver a teclearlas.
-        */
-        require_once "../core/231018libreriaValidacion.php"; // importamos nuestra libreria
-       
-        $entradaOK = true; //Variable que nos indica que todo va bien
-        $aErrores = [  //Array donde recogemos los mensajes de error
-            'nombre' => '', 
-            'fecha_nacimiento'=>'',
-            'codpostal' => '', 
-            'telefono'=> '',
-            'aceptarRgpd'=>''
-        ];
-        $aRespuestas=[ //Array donde recogeremos la respuestas correctas (si $entradaOK)
-            'nombre' => '', 
-            'fecha_nacimiento'=>'',
-            'codpostal' => '', 
-            'telefono'=> '',
-            'aceptarRgpd'=>''
-        ]; 
-        
-        //Para cada campo del formulario: Validar entrada y actuar en consecuencia
-        if (isset($_REQUEST["enviar"])) {//Código que se ejecuta cuando se envía el formulario
+<?php 
+    /**
+    * @author: Gonzalo Junquera Lorenzo
+    * @since: 24/10/2025
+    * 24.Construir un formulario para recoger un cuestionario realizado a una persona y mostrar en la  misma página las preguntas y las respuestas recogidas; en el caso de que alguna respuesta esté vacía o errónea volverá a salir el formulario con el mensaje correspondiente, pero las respuestas que habíamos tecleado correctamente aparecerán en el formulario y no tendremos que volver a teclearlas.
+    */
+    require_once "../core/231018libreriaValidacion.php"; // importamos nuestra libreria
 
-            // Validamos los datos del formulario
-            $aErrores['nombre']= validacionFormularios::comprobarAlfabetico($_REQUEST['nombre'],100,0,1,);
-            $ofechaActual = new DateTime(); // creamos la fecha actual para pasarla al validarfecha
-            $aErrores['fecha_nacimiento']= validacionFormularios::validarFecha($_REQUEST['fecha_nacimiento'],$ofechaActual->format('m/d/Y'));
-            $aErrores['codpostal']= validacionFormularios::comprobarEntero($_REQUEST['codpostal']);
-            $aErrores['telefono'] = validacionFormularios::validarTelefono($_REQUEST['telefono']);
-            
-            if(!empty($_REQUEST['telefono'])){ // Comprobar si el telefono está vacío
-                foreach($aErrores as $campo => $valor){
-                    if(!empty($valor)){ // Comprobar si el valor es válido
-                        $entradaOK = false;
-                    } 
-                }
-            }else{ //Construir mensajes de error
-                $aErrores['telefono']='Introduce un teléfono';
-                $entradaOK = false;
+    $entradaOK = true; //Variable que nos indica que todo va bien
+    $aErrores = [  //Array donde recogemos los mensajes de error
+        'nombre' => '', 
+        'fecha_nacimiento'=>'',
+        'codpostal' => '', 
+        'telefono'=> '',
+        'aceptarRgpd'=>''
+    ];
+    $aRespuestas=[ //Array donde recogeremos la respuestas correctas (si $entradaOK)
+        'nombre' => '', 
+        'fecha_nacimiento'=>'',
+        'codpostal' => '', 
+        'telefono'=> '',
+        'aceptarRgpd'=>''
+    ]; 
+
+    //Para cada campo del formulario: Validar entrada y actuar en consecuencia
+    if (isset($_REQUEST["enviar"])) {//Código que se ejecuta cuando se envía el formulario
+
+        // Validamos los datos del formulario
+        $aErrores['nombre']= validacionFormularios::comprobarAlfabetico($_REQUEST['nombre'],100,0,1,);
+        $ofechaActual = new DateTime(); // creamos la fecha actual para pasarla al validarfecha
+        $aErrores['fecha_nacimiento']= validacionFormularios::validarFecha($_REQUEST['fecha_nacimiento'],$ofechaActual->format('m/d/Y'));
+        $aErrores['codpostal']= validacionFormularios::comprobarEntero($_REQUEST['codpostal']);
+        $aErrores['telefono'] = validacionFormularios::validarTelefono($_REQUEST['telefono']);
+        
+        if(!empty($_REQUEST['telefono'])){ // Comprobar si el telefono está vacío
+            foreach($aErrores as $campo => $valor){
+                if(!empty($valor)){ // Comprobar si el valor es válido
+                    $entradaOK = false;
+                } 
             }
-            
-        } else {//Código que se ejecuta antes de rellenar el formulario
+        }else{ //Construir mensajes de error
+            $aErrores['telefono']='Introduce un teléfono';
             $entradaOK = false;
         }
-        //Tratamiento del formulario
-        if($entradaOK){ //Cargar la variable $aRespuestas y tratamiento de datos OK
-            date_default_timezone_set('Europe/Madrid');
-            setlocale(LC_TIME, 'es_ES.utf8');
+        
+    } else {//Código que se ejecuta antes de rellenar el formulario
+        $entradaOK = false;
+    }
+    //Tratamiento del formulario
+    if($entradaOK){ //Cargar la variable $aRespuestas y tratamiento de datos OK
+        date_default_timezone_set('Europe/Madrid');
+        setlocale(LC_TIME, 'es_ES.utf8');
 
-            // Recuperar los valores del formulario
-            $aRespuestas['nombre'] = $_REQUEST['nombre'];
-            $ofechaNacimiento = new DateTime($_REQUEST['fecha_nacimiento']);
-            $aRespuestas['fecha_nacimiento'] = strftime("%A, %d de %B de %Y", $ofechaNacimiento->getTimestamp());
-            $aRespuestas['codpostal'] = $_REQUEST['codpostal'];
-            $aRespuestas['telefono'] = $_REQUEST['telefono'];
-            $aRespuestas['aceptarRgpd'] = $_REQUEST['aceptarRgpd']?'SI':'NO';
-            
-            echo "<h2>Resultados:</h2>";
-            foreach ($aRespuestas as $campo => $valor) {
-                echo "<p>$campo: <b>$valor</b></p>";
-            }
-
-            // Botón para volver a recargar el formulario inicial
-            echo '<a href="' . $_SERVER['PHP_SELF'] . '"><button>Volver</button></a>';
-            
-        } else { //Mostrar el formulario hasta que lo rellenemos correctamente
-            //Mostrar formulario
-            //Mostrar los datos tecleados correctamente en intentos anteriores
-            //Mostrar mensajes de error (si los hay y el formulario no se muestra por primera vez)
-            ?>
-                <h2>DATOS PERSONALES</h2>
-                <hr>
-                <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post"> 
-                    <label for="tipoUsuario">Tipo usuario:</label>
-                    <input type="text" id="tipoUsuario" name="tipoUsuario" value="Administrador" readonly>
-                    <br>
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" value="<?php echo $_REQUEST['nombre']??'' ?>">
-                    <span class="error"><?php echo $aErrores['nombre'] ?></span>
-                    <br>
-                    <label for="fecha_nacimiento">Fecha de nacimiento: </label>
-                    <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" value="<?php echo $_REQUEST['fecha_nacimiento']??'' ?>">
-                    <span class="error"><?php echo $aErrores['fecha_nacimiento']??'' ?></span>
-                    <br>
-                    <label for="codpostal">Codigo Postal:</label>
-                    <input type="number" name="codpostal" value="<?php echo $_REQUEST['codpostal']??'' ?>">
-                    <br>
-                    <label for="telefono">Telefono:</label> 
-                    <input type="text" id="telefono" name="telefono" value="<?php echo $_REQUEST['telefono']??'' ?>">
-                    <span class="error"><?php echo $aErrores['telefono'] ?></span>
-                    <br>
-                    <label for="aceptarRgpd">¿Aceptas el RGPD?:</label> 
-                    <input type="checkbox" name="aceptarRgpd" id="aceptarRgpd">
-                    <br>                    
-                    <input type="submit" value="Enviar" name="enviar">
-                </form>
-
-            <?php
-
+        // Recuperar los valores del formulario
+        $aRespuestas['nombre'] = $_REQUEST['nombre'];
+        $ofechaNacimiento = new DateTime($_REQUEST['fecha_nacimiento']);
+        $aRespuestas['fecha_nacimiento'] = strftime("%A, %d de %B de %Y", $ofechaNacimiento->getTimestamp());
+        $aRespuestas['codpostal'] = $_REQUEST['codpostal'];
+        $aRespuestas['telefono'] = $_REQUEST['telefono'];
+        $aRespuestas['aceptarRgpd'] = $_REQUEST['aceptarRgpd']?'SI':'NO';
+        
+        echo "<h2>Resultados:</h2>";
+        foreach ($aRespuestas as $campo => $valor) {
+            echo "<p>$campo: <b>$valor</b></p>";
         }
-       ?>
-       
-    </main>
-</body>
+
+        // Botón para volver a recargar el formulario inicial
+        echo '<a href="' . $_SERVER['PHP_SELF'] . '"><button>Volver</button></a>';
+        
+    } else { //Mostrar el formulario hasta que lo rellenemos correctamente
+        //Mostrar formulario
+        //Mostrar los datos tecleados correctamente en intentos anteriores
+        //Mostrar mensajes de error (si los hay y el formulario no se muestra por primera vez)
+?>
+<!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8"> 
     <link rel="icon" type="image/png" href="../webroot/media/favicon/favicon-32x32.png">
@@ -195,4 +153,44 @@
         }
     </style>
 </head>
+<body>
+    <div id="aviso">CURSO 2025/2026 -- DAW 2 -- I.E.S. LOS SAUCES</div>
+    <nav>
+        <div><a href="../indexProyectoTema3.php">Volver</a></div>
+        <h2> <a href="../indexProyectoTema3.php">Tema 3</a> - Ejercicio 24</h2>
+        <h2>Gonzalo Junquera Lorenzo</h2>
+    </nav>
+    <main>
+        <h2>DATOS PERSONALES</h2>
+        <hr>
+        <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post"> 
+            <label for="tipoUsuario">Tipo usuario:</label>
+            <input type="text" id="tipoUsuario" name="tipoUsuario" value="Administrador" readonly>
+            <br>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" value="<?php echo $_REQUEST['nombre']??'' ?>">
+            <span class="error"><?php echo $aErrores['nombre'] ?></span>
+            <br>
+            <label for="fecha_nacimiento">Fecha de nacimiento: </label>
+            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" value="<?php echo $_REQUEST['fecha_nacimiento']??'' ?>">
+            <span class="error"><?php echo $aErrores['fecha_nacimiento']??'' ?></span>
+            <br>
+            <label for="codpostal">Codigo Postal:</label>
+            <input type="number" name="codpostal" value="<?php echo $_REQUEST['codpostal']??'' ?>">
+            <br>
+            <label for="telefono">Telefono:</label> 
+            <input type="text" id="telefono" name="telefono" value="<?php echo $_REQUEST['telefono']??'' ?>">
+            <span class="error"><?php echo $aErrores['telefono'] ?></span>
+            <br>
+            <label for="aceptarRgpd">¿Aceptas el RGPD?:</label> 
+            <input type="checkbox" name="aceptarRgpd" id="aceptarRgpd">
+            <br>                    
+            <input type="submit" value="Enviar" name="enviar">
+        </form>
+
+        <?php
+        }
+        ?>    
+    </main>
+</body>
 </html>
