@@ -1,5 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
+<head>
+    <meta charset="UTF-8"> 
+    <link rel="icon" type="image/png" href="../webroot/media/favicon/favicon-32x32.png">
+    <link rel="stylesheet" href="../webroot/css/estilos.css">
+    <title>Gonzalo Junquera Lorenzo</title>
+            <style>
+            main{
+                margin: 20px 20px 20px 20px;
+            }
+            table{
+                border-collapse: collapse;
+                width: 100%;
+                table-layout: fixed;
+            }
+            th{
+                background-color: gainsboro;
+                border: 1px solid black;
+                padding: 3px;
+            }
+            td{
+                border: 1px solid black;
+                padding: 3px;
+            }
+            h3{
+                text-align: center;
+                margin: 10px;
+            }
+        </style>
+</head>
 <body>
     <div id="aviso">CURSO 2025/2026 -- DAW 2 -- I.E.S. LOS SAUCES</div>
     <nav>
@@ -159,6 +188,8 @@
             echo "<tr><td colspan='2'><em>La variable \$_SERVER está vacía.</em></td></tr>";
         }
         echo "</table>";
+
+        echo '<h3>Usando print_r para la variable $_SERVER</h3>';
         print_r($_SERVER);
         
         echo '<h3>Usando var_dump para la variable $_SERVER</h3>';
@@ -166,33 +197,4 @@
        ?>
     </main>
 </body>
-<head>
-    <meta charset="UTF-8"> 
-    <link rel="icon" type="image/png" href="../webroot/media/favicon/favicon-32x32.png">
-    <link rel="stylesheet" href="../webroot/css/estilos.css">
-    <title>Gonzalo Junquera Lorenzo</title>
-            <style>
-            main{
-                margin: 20px 20px 20px 20px;
-            }
-            table{
-                border-collapse: collapse;
-                width: 100%;
-                table-layout: fixed;
-            }
-            th{
-                background-color: gainsboro;
-                border: 1px solid black;
-                padding: 3px;
-            }
-            td{
-                border: 1px solid black;
-                padding: 3px;
-            }
-            h3{
-                text-align: center;
-                margin: 10px;
-            }
-        </style>
-</head>
 </html>

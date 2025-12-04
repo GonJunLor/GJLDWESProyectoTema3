@@ -1,5 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
+<head>
+    <meta charset="UTF-8"> 
+    <link rel="icon" type="image/png" href="../webroot/media/favicon/favicon-32x32.png">
+    <link rel="stylesheet" href="../webroot/css/estilos.css">
+    <title>Gonzalo Junquera Lorenzo</title>
+    <style>
+        main{
+            margin: 20px 20px 20px 100px;
+        }
+        h3{
+            margin-top: 20px;
+        }
+    </style>
+</head>
 <body>
     <div id="aviso">CURSO 2025/2026 -- DAW 2 -- I.E.S. LOS SAUCES</div>
     <nav>
@@ -14,9 +28,8 @@
         * @since: 27/10/2025
         * 3.Mostrar en tu página index la fecha y hora actual formateada en castellano. (Utilizar cuando sea posible la clase DateTime)
         */
-       //setlocale("Europe/Madrid");
-       date_default_timezone_set('Europe/Madrid');
-       // Establecer el locale (idioma) en español
+        date_default_timezone_set('Europe/Madrid');
+        // Establecer el locale (idioma) en español
         setlocale(LC_TIME, 'es_ES.UTF-8', 'es_ES', 'spanish');
         $ofecha = new DateTime();
 
@@ -41,18 +54,4 @@
        ?>
     </main>
 </body>
-<head>
-    <meta charset="UTF-8"> 
-    <link rel="icon" type="image/png" href="../webroot/media/favicon/favicon-32x32.png">
-    <link rel="stylesheet" href="../webroot/css/estilos.css">
-    <title>Gonzalo Junquera Lorenzo</title>
-    <style>
-        main{
-            margin: 20px 20px 20px 100px;
-        }
-        h3{
-            margin-top: 20px;
-        }
-    </style>
-</head>
 </html>

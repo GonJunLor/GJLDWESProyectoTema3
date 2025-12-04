@@ -1,5 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="../webroot/media/favicon/favicon-32x32.png">
+    <link rel="stylesheet" href="../webroot/css/estilos.css">
+    <title>Gonzalo Junquera Lorenzo</title>
+    <style>
+        main{
+            margin: 20px 20px 20px 100px;
+        }
+        h3{
+            margin-top: 20px;
+        }
+        .negrita{
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        .tipo{
+            color: green;
+            font-weight: bold;
+        }
+        .valor{
+            color: blue;
+            font-weight: bold;
+        }
+    </style>
+</head>
 <body>
     <div id="aviso">CURSO 2025/2026 -- DAW 2 -- I.E.S. LOS SAUCES</div>
     <nav>
@@ -56,30 +82,4 @@
        ?>
     </main>
 </body>
-<head>
-    <meta charset="UTF-8">
-    <link rel="icon" type="image/png" href="../webroot/media/favicon/favicon-32x32.png">
-    <link rel="stylesheet" href="../webroot/css/estilos.css">
-    <title>Gonzalo Junquera Lorenzo</title>
-    <style>
-        main{
-            margin: 20px 20px 20px 100px;
-        }
-        h3{
-            margin-top: 20px;
-        }
-        .negrita{
-            font-weight: bold;
-            font-size: 0.9em;
-        }
-        .tipo{
-            color: green;
-            font-weight: bold;
-        }
-        .valor{
-            color: blue;
-            font-weight: bold;
-        }
-    </style>
-</head>
 </html>

@@ -1,5 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
+<head>
+    <meta charset="UTF-8"> 
+    <link rel="icon" type="image/png" href="../webroot/media/favicon/favicon-32x32.png">
+    <link rel="stylesheet" href="../webroot/css/estilosHome.css">
+    <title>Gonzalo Junquera Lorenzo</title>
+    <style>
+        h2{text-align: center}
+        td{
+            border: 1px solid black;
+            border-radius: 5px;
+            max-width: 60px;
+            width: 60px;
+            height: 40px;
+            text-align: center;
+            background-color: rgba(189, 121, 121, 1);
+        }
+        th{
+            padding-right: 10px;
+        }
+        .ocupado{
+            background-color: greenyellow;
+        }
+    </style>
+</head>
 <body>
     <div id="aviso">CURSO 2025/2026 -- DAW 2 -- I.E.S. LOS SAUCES</div>
     <nav>
@@ -41,8 +65,8 @@
         }
 
         // Constantes con datos iniciales
-        const FILAS = 20;
-        const ASIENTOS = 15;
+        define('FILAS', 20);
+        define('ASIENTOS', 15);
         
         // Creación de array teatro bidimensional de 20*15
         for($iFila=1;$iFila<=20;$iFila++){
@@ -66,29 +90,4 @@
        ?>
     </main>
 </body>
-<head>
-    <meta charset="UTF-8"> 
-    <link rel="icon" type="image/png" href="../webroot/media/favicon/favicon-32x32.png">
-    <link rel="stylesheet" href="../webroot/css/estilos.css">
-    <title>Gonzalo Junquera Lorenzo</title>
-    <style>
-        h2{text-align: center}
-        td{
-            border: 1px solid black;
-            border-radius: 5px;
-            max-width: 60px;
-            width: 60px;
-            height: 40px;
-            text-align: center;
-            background-color: rgba(189, 121, 121, 1);
-        }
-        th{
-            padding-right: 10px;
-        }
-        .ocupado{
-            background-color: greenyellow;
-        }
-    </style>
-</head>
-
 </html>
