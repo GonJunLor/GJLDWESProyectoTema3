@@ -96,33 +96,6 @@ section>div{
     flex-wrap: wrap;
 }
 
-/* Tabla */
-table{
-    width: 75vw;
-    /* min-width: 80vw; */
-    margin: auto;
-    margin-top: 5px;
-    margin-bottom: 20px;
-    /* background-color: var(--colorFondo2); */
-}
-tr:nth-child(odd) td{
-    background-color: var(--colorFondo2);
-    border: 1px solid var(--colorFondo3);
-}
-tr:nth-child(even) td{
-    /* background-color: var(--colorFondo3); */
-    border: 1px solid var(--colorFondo2);
-}
-td{
-    padding: 0px 10px;
-    border-radius: 10px;
-}
-img[alt="boton_play"]{
-    width: 22px;
-}
-img[alt="boton_code"]{
-    width: 22px;
-}
 
 /* Pie de pagína */
 body>footer{
