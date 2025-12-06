@@ -54,7 +54,7 @@
         // Recuperar los valores del formulario
         $aRespuestas['nombre'] = $_REQUEST['nombre'];
         $ofechaNacimiento = new DateTime($_REQUEST['fecha_nacimiento']);
-        $aRespuestas['fecha_nacimiento'] = strftime("%A, %d de %B de %Y", $ofechaNacimiento->getTimestamp());
+        $aRespuestas['fecha_nacimiento'] = $ofechaNacimiento->format("D, d M Y");
         $aRespuestas['codpostal'] = $_REQUEST['codpostal'];
         $aRespuestas['telefono'] = $_REQUEST['telefono'];
         $aRespuestas['aceptarRgpd'] = $_REQUEST['aceptarRgpd']?'SI':'NO';
